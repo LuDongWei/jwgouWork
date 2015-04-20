@@ -1,0 +1,59 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="http://cca.mbaobao.com/static/mod/min/f=seajs/seajs/2.0.0/sea.js,seajs/seajs/2.0.0/plugin-style.js,seajs/seajs/2.0.0/plugin-mbb.js,mbb/config/2.0.1/sea-config.js,arale/events/1.0.0/events.js,gallery/cookie/1.0.2/cookie.js,jquery/jquery/1.7.2/jquery.js?1230"></script>
+<script type="text/javascript" src="http://cca.mbaobao.com/static/mod/mbb/global/2.0.1/global.js?1230"></script>
+<style type="text/css">
+*{padding:0;margin:0}
+ul,li{list-style: none}
+
+</style>
+  <div id="login" style="width:960px; margin:0 auto;height:50px;">登陆</div>
+ 
+<textarea style="display:none;" id="simple-dom">
+	<div class="loginmodal-wrap fade">	
+	  <form id="myForm" target="_parent" action="https://sso.dinghuo123.com/login" method="post">
+		<div class="control-box modal-dialog">
+		   <a class="ui_close" href="javascript:void(0);" title="关闭" hideFocus="true" rel="nofollow">×</a>
+			<div class="control-group mt10">
+				立即登录，快速购买
+			</div>
+			<div class="control-group">
+				<div class="control-input">
+					<input id="username" type="text" class="ui-input" name="username" placeholder="用户名" autocomplete="off">
+				</div>
+			</div>
+			<div class="control-group">
+				<div class="control-input">
+					<input type="password" id="password" name="password" value="" class="ui-input"  placeholder="密码">
+				</div>
+			</div>
+			<div class="verifyCode-box" style="display:block;">
+				<div class="control-group control-pos">
+					<div class="control-input">
+						<input type="text" class="ui-input" name="verifyCode" placeholder="输入右侧字符" autocomplete="off" id="verifyCode">
+						<img src="http://www.jwgou.com/admin/getValidateImg.aspx" alt="验证码" title="点击刷新" class="verifyCodeImg">
+					</div>
+				</div>
+				<div class="control-group mb20" style="text-align:right">
+					<div class="control-input">
+						<a id="changecode" class="changeVerifyCode" href="javascript:void(0)">换一张</a>
+					</div>
+				</div>
+			</div>
+			<div class="control-group">
+				<div class="control-input f14 rlop">
+					<div style="float:left">没有账号？<a href="../../demo/register.htm" class="theme-color register">立即注册</a></div>
+					<input  hideFocus="true" rel="nofollow" type="submit" class="ui-btn" id="btnIsubmit" value="登录">
+				</div>
+			</div>
+			<div class="control-group" style="height:18px">
+				<div class="control-input" style="display:none">
+					<label class="error-message" id="error">用户名不能为空</label>
+				</div>
+			</div>
+		</div>
+	  </form>
+	</div>
+</textarea>
+<script>
+        seajs.use('./loginsimple')
+    </script>

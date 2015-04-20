@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+  <head>
+      <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+      <title>福来账户注册</title>
+      <meta content="" name="Keywords" />
+      <link rel="stylesheet" href="../jwg/global/global.css" />
+      <link rel="stylesheet" href="../jwg/register/register.css" />
+      <script src="../mod/seajs/sea.js"></script>
+      <script src="../mod/sea-config/sea-config.js"></script>
+  </head>
+<body class="register">
+  <div class="register_wrap">
+    <div class="header-wrap">
+      <!--topmenu-->
+      <div class="top-wrap">
+          <div class="menu-wrap" id="menu1">
+                  <h1 class="logo"><a href="./home.htm">福来国际速递</a></h1>
+                  <a href="./login.htm" target="_blank" class="ui-btn login-btn">返回首页</a>
+           </div>
+      </div>
+     <!--topmenu-->
+    </div>
+      <div class="banner-wrap">
+          <p class="rb1">福来账户注册</p>          
+          <div class="re_box_bg"></div>
+          <div class="re-box">
+             <form action="/apply/apply" id="myForm" method="post" autocomplete="off">
+                <div class="control-box">
+                   <div class="control-group">
+                        <div class="control-input">
+                          <input type="text" class="ui-input txt-input" name="userEmail" tabindex="1" id="useremail" placeholder="注册邮箱（必填）">
+                          <label class="label-tip label-tip-info" title="4-20位英文字母或数字"></label>
+                           <div class="label_text_wrap">
+                              <span class="arrow"></span><span class="l_error">4-20位英文字母或数字</span>
+                            </div>
+                          </div>  
+                     </div>
+                    <div class="control-group">
+                        <div class="control-input">
+                          <input type="text" class="ui-input txt-input" name="userName" tabindex="1" id="username" placeholder="用户名（必填）">
+                          <label class="label-tip label-tip-info" title="4-20位英文字母或数字"></label>
+                           <div class="label_text_wrap">
+                              <span class="arrow"></span><span class="l_error">4-20位英文字母或数字</span>
+                            </div>
+                          </div>  
+                     </div>
+                     <div class="control-group">
+                        <div class="control-input">
+                          <input type="password" name="password" class="ui-input txt-input" tabindex="2" placeholder="密码（必填）" id="password">
+                          <label class="label-tip label-tip-info" title="6-20位英文字母或数字"></label>
+                          <div class="label_text_wrap">
+                              <span class="arrow"></span><span class="l_error">6-20位英文字母或数字</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                      <div class="control-input">
+                        <input type="password" name="recommendCode" class="ui-input txt-input canslect" tabindex="3" placeholder="确认密码" value="" id="recommendCode">
+                        <label class="label-tip label-tip-info" title="请再次输入您的密码"></label>
+                         <div class="label_text_wrap">
+                              <span class="arrow"></span><span class="l_error">两次输入密码不一致</span>
+                         </div>
+                      </div>
+                    </div>
+                    <div class="control-group">
+                      <div class="control-input verfycode">
+                        <input type="text" name="verfCode" class="ui-input inp-verfCode txt-input" tabindex="4" placeholder="验证码（必填）" id="verfCode">
+                        <img src="http://www.mbaobao.com/validCode/image?channel=register&tid=635380293024616580" height="40" width="90" class="auth-image">
+                        <a href="javascript:void(0)" class="refresh-auth">换一张</a>
+                         <label class="label-tip label-tip-info " title="6-20位英文字母或数字"></label>
+                          <div class="label_text_wrap">
+                              <span class="arrow"></span><span class="l_error">不能为空</span>
+                            </div>
+
+                      </div>
+                    </div>
+                    <div class="control-group">
+                      <div class="control-input">
+                        <label class="check-rule"><input type="checkbox" name="checkRule" checked="checked">我已同意<a href="http://www.dinghuo123.com/termofservice.shtml" target="_blank">服务条款</a>，以及<a href="http://www.dinghuo123.com/privacyprotection.shtml" target="_blank">隐私政策</a></label>
+                      </div>
+                    </div>
+                   <div class="control-group">
+                      <div class="control-input">
+                        <input type="submit" class="btn-register" tabindex="5" value="立即注册"><label class="label-login">已有账号，<a href="./login.htm">直接登录</a></label>
+                      </div>
+                   </div>
+                </div>
+             </form>
+          </div>
+      </div>
+  </div>
+
+<script>
+seajs.use('../jwg/register/register')
+</script>
+</body>
+</html>

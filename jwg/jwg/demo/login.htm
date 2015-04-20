@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+   
+
+    <title></title>
+    <meta content="" name="Keywords" />
+    <meta content="" name="Description" />
+
+
+    <link rel="stylesheet" href="../jwg/login/login.css" />
+    <script src="../mod/seajs/sea.js"></script>
+    <script src="../mod/sea-config/sea-config.js"></script>
+</head>
+<body class="login">
+  <div class="login_wrap">
+      <div class="login_main">
+           <div class="login_l">
+               <img src="../jwg/login/img/loginl.jpg" width="480" height="490">
+           </div>
+           <div class="login_r">
+              <form id="loginForm" method="post" action="http://www.qq.com" autocomplete="off">
+                 <a href="http://www.flfly.com/" target="_blank" class="pic-logo"><img src="../jwg/login/img/logo-min.png" /></a>
+                 <div class="login_cont">
+                      <div class="login-group">
+                        <div class="login_warning clearfix ishide">
+                          <span class="warning_ico"></span>
+                          <span class="warning_con">用户名不能为空</span>
+                        </div>
+                      </div>
+                      <div class="login-group">
+                         <input type="text" id="username" name="username" class="input-h40" placeholder="请输入用户名" autocomplete="off" value="">
+                      </div>
+                      <div class="login-group">
+                         <input type="password" id="password" name="password" class="input-h40" placeholder="请输入密码" autocomplete="off">
+                      </div>
+                      
+                      <div class="login-group loginextra-box">
+                        <div class="control-input">
+                          <label class="ui-check chk checked"><input type="checkbox" name="remember_me" checked="true">记住用户名</label>
+                          <a href="../password_strep1_0.htm">忘记密码？</a>
+                        </div>
+                      </div>
+                      <div class="login-group">
+                        <input type="submit" class="ui_submit_blue" id="btnIsubmit" value="登录">
+                      </div>
+                   </div>
+              </form>
+              <div class="noaccount">没有福来帐户？<a class="register" href="./register.htm">立即注册</a></div>
+           </div>
+      </div>
+  </div>
+  <!--bottom-->
+  <div class="loginfooter">
+    <div class="footer-wrap">
+      <span>Copyright @ 2011-2015 美国福来速递, All Rights Reserved.</span>
+      <span class="fr clearfix footmenu">
+         <a href="./demo/home.htm">返回首页</a>       
+        <a href="./demo/join.htm">关于福来</a>
+      </span>
+    </div>
+  </div>
+<script>
+seajs.use('../jwg/login/login')
+</script>
+</body>
+</html>
