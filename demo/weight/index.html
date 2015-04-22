@@ -1,0 +1,241 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Access-Control-Allow-Origin" content="*">
+<title>商品包装打包</title>
+
+<link rel="stylesheet" type="text/css" href="spm_modules/bootstrap/3.3.1/css/bootstrap.min.css" media="all" />
+</head>
+<script type="text/javascript" src="spm_modules/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="spm_modules/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="spm_modules/handlebars/2.0.0/dist/handlebars.js"></script>
+
+<body>
+
+<style type="text/css">
+.jwg-weight{
+     padding:5px;
+}	
+.weight-table .table th,.weight-table .table td{
+    text-align:center; 
+}
+.weight-table .wNumber input{
+	width:70px;
+	margin:0 auto;
+}
+.weight-operate{
+
+}
+</style> 
+
+<div class="jwg-weight">
+	<div class="panel panel-default">
+		<div class="panel-heading text-center">产品打包处理</div>
+		<div class="panel-body">            
+            <!--商品拆分箱-->
+		    <div class="weight-table row">
+		    	<div class="col-sm-5">
+		    		<table class="table table-bordered table-hover" id="onPackTable">
+		    			<caption class="text-center">分配需要打包的商品</caption>
+		    			<thead>
+		    				<tr>
+		    				    <th>商品运单</th>
+		    					<th>商品名称</th>
+		    					<th>数量</th>
+		    					<th>拆分个数</th>
+		    					<th>操作</th>
+		    				</tr>
+		    			</thead>
+		    			<tbody>
+		    				<tr>
+		    				    <td>2000</td>
+		    					<td>Mark</td>
+		    					<td>1</td>
+		    					<td class="wNumber">
+		    					  <input type="number" class="form-control"  value="1"> 	
+		    					</td>
+		    					<td>
+		    					  <a href="javascript:void(0)" id="splitBut" class="btn btn-default" role="button">拆分</a>
+		    					</td>
+		    				</tr>	
+		    				<tr>
+		    				    <td>2000</td>
+		    					<td>Mark</td>
+		    					<td>1</td>
+		    					<td class="wNumber">
+		    					  <input type="number" class="form-control"  value="1"> 	
+		    					</td>
+		    					<td>
+		    					  <a href="javascript:void(0)" id="splitBut" class="btn btn-default" role="button">拆分</a>
+		    					</td>
+		    				</tr>	
+		    				<tr>
+		    				    <td>2000</td>
+		    					<td>Mark</td>
+		    					<td>1</td>
+		    					<td class="wNumber">
+		    					  <input type="number" class="form-control"  value="1"> 	
+		    					</td>
+		    					<td>
+		    					  <a href="javascript:void(0)" id="splitBut" class="btn btn-default" role="button">拆分</a>
+		    					</td>
+		    				</tr>		    				
+		    			</tbody>
+		    		</table>
+		    	</div>
+		    	<div class="col-sm-7">
+                    
+                    <!--商品需要计算信息-->
+                    <div class="form-horizontal">
+                        <div class="col-sm-3">
+                            <div class="form-group" style="margin-bottom:0px;">
+                            	<h5 class="text-center">物品重量(1b)</h5>
+                            	<input type="number" class="form-control" id="ipWeight" placeholder="包裹重量" value="" disabled >
+                            	<input type="text" id="ipWeightHi" value="" style="font-size: 0px;
+border: none;" >
+                            </div>
+                            <div class="form-group"> 
+                              <div class="checkbox">
+                            	<label>
+                            		<input type="checkbox"  id="checkWeight"  >                            
+                            		修改商品重量
+                            	</label>
+                              </div> 	                          	
+                            </div>
+                            <div id="amendWg" style="display:none;">
+	                            <div class="form-group">
+	                                <input type="number" class="form-control" id="newWeight" placeholder="" value="" >                              
+	                            </div>
+	                            <a href="javascript:void(0)" id="newSubmit" class="btn btn-warning" role="button">完成重量修改</a>
+                            </div>
+                        </div>
+                        <div class="col-sm-8 col-sm-offset-1">
+                            <div class="form-inline row" >
+                                <h5 class="text-center">物品长宽高(ft)</h5> 
+                                <div class="col-sm-4">
+                                   <div class="form-group">
+                                   	<label for="exampleInputName2">长&nbsp;&nbsp;</label>
+                                   	<input type="number" class="form-control" id="ipLong" value="" style="width:70%" disabled>
+                                   </div>
+                                </div>
+                                <div class="col-sm-4">
+                                  <div class="form-group">
+                                   	<label for="exampleInputName2">宽&nbsp;&nbsp;</label>
+                                   	<input type="number" class="form-control" id="ipWide" value="" style="width:70%" disabled>
+                                   </div>
+                                </div>
+                                <div class="col-sm-4">
+                                   <div class="form-group">
+                                   	<label for="exampleInputName2">高&nbsp;&nbsp;</label>
+                                   	<input type="number" class="form-control" id="ipHigh" value="" style="width:70%" disabled>
+                                   </div>
+                                </div>
+                            </div>                       
+                                                       
+                            <div class="form-group checkbox">
+                            	<label>
+                            		<input type="checkbox"  id="checkSize"  >商品体积计算</label>
+                            	<!-- <p class="help-block">长*宽*高</p> -->
+                            </div>
+                        </div>
+		    		</div>
+		    		<!--商品需要计算信息-->
+
+		    		<table class="table table-bordered table-hover" id="packBoxTable">
+		    			<caption class="text-center">本包裹已经选择了的商品</caption>
+		    			<thead>
+		    				<tr>
+		    				    <th>商品运单</th>
+		    					<th>商品名称</th>
+		    					<th>数量</th>
+		    					<th>操作</th>
+		    				</tr>
+		    			</thead>
+		    			<tbody>
+		    				
+		    			</tbody>
+		    		</table>
+		    	</div>
+		    </div>
+		    <!--商品拆分箱-->
+            
+            <div class="weight-operate">
+                 <div class="row">
+			    	<div class="col-sm-5 text-right">
+			    	  <a href="javascript:void(0)" id="promptlyAllBut" class="btn btn-info" role="button">不拆分立即打包</a>
+			    	</div> 
+			    	<div class="col-sm-7 text-right">
+			    	   <a href="javascript:void(0)" id="parcelUpBut" class="btn btn-success" role="button">完成并进行打印</a>
+			    	</div> 
+			      </div>  	
+            </div>
+		</div>
+	</div>
+</div>
+
+<!-- <div class="modal fade goWeight" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        	<span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title text-center">放入商品称重</h4>
+       </div>
+       <div class="modal-body" id="failedReason">
+            <input type="text" class="form-control" id="changeName" value="">
+       </div>
+    </div>
+  </div>
+</div> -->
+
+
+<script id="onGoods-template" type="text/x-handlebars-template">
+{{#Goods}}
+<tr data-id="{{id}}" data-name="{{name}}" data-count="{{count}}" data-pid="{{pid}}" >
+    {{#if isFirst}} 
+    <td class="row" rowspan="{{leg}}">{{pid}}</td>     
+    {{/if}}
+	<td>{{name}}</td>
+	<td>{{count}}</td>
+	<td class="wNumber">
+		<input type="number" class="form-control" id="splitNum"  value="1"> 	
+	</td>
+	{{#if ispuck}}
+	   	<td>
+		 <a href="javascript:void(0)"  class="btn btn-default packBut" onClick="packBut(this)" role="button">打包</a>
+		 <a href="javascript:void(0)"  class="btn btn-default splitBut" onClick="splitBut(this)" role="button">拆分</a>
+	    </td>
+	{{else}}
+	   <td>
+		<a href="javascript:void(0)"  class="btn btn-default packBut" onClick="packBut(this)" role="button">打包</a>
+	   </td> 
+	{{/if}}
+</tr>
+{{/Goods}}
+</script>
+
+
+
+<script id="packGoods-template" type="text/x-handlebars-template">
+{{#Goods}}
+<tr data-id="{{id}}" data-name="{{name}}" data-count="{{count}}" data-pid="{{pid}}">
+    {{#if isFirst}} 
+    <td class="row" rowspan="{{leg}}">{{pid}}</td>     
+    {{/if}} 
+	<td>{{name}}</td>
+	<td>{{count}}</td>
+	<td>
+		<a href="javascript:void(0)" id="deleteBut" class="btn btn-default deleteBut" onClick="deleteBut(this)" role="button">删除</a>
+	</td>
+</tr>
+{{/Goods}}
+</script>
+
+
+<script type="text/javascript" src="./weight2.js?2015"></script>
+
+
+</body>
+</html>

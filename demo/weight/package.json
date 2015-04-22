@@ -1,0 +1,27 @@
+{
+  "name": "weight",
+  "version": "1.0.0",
+  "description": "this is test",
+  "keywords": [],
+  "homepage": "",
+  "author": "Mr.lu <weixiaobao5603169@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "bugs": {
+    "url": ""
+  },
+  "licenses": "MIT",
+  "spm": {
+    "main": "index.js",
+    "dependencies": {
+      "jquery": "1.10.1",
+      "expect.js": "0.3.1",
+      "bootstrap": "3.3.1"
+    },
+    "devDependencies": {
+      "expect.js": "0.3.1"
+    }
+  }
+}
