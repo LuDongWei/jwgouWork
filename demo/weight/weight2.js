@@ -17,33 +17,317 @@ var goodsList = [
              {id:"565852",name:"外国的小狗",count:8},
              {id:"665545",name:"外国的玩具",count:7}]
     }
-]                   
+] 
+
+var successData = {
+  ResponseStatus: 0,
+  ResponseMsg: "扫描成功",
+  ResponseData: {
+    IncomePackageList: [{
+      postcodeId: "6907992100012",
+      Type: "UPS",
+      ShelfNo: "",
+      goods: [{
+        id: 273597,
+        name: "dsad",
+        count: 12
+      }]
+    }],
+    PackTypeList: [{
+      TypeHtml: "小包直邮件有客户自行支付关税，需提供身份证，我们代为申报（价格为$5一磅）<div id='centerdiv' align='center'> <div class='notification attention png_bg'> <a href='#' class='close'><img src='/resources/images/icons/cross_grey_small.png' title='Close this notification' alt='close' /></a> <div align='center' style=' font-size:15px;text-align:left'> <p>每个包裹最好控制在3KG以内，超过3KG我们有权分包裹转运，转换大包裹转运。</p> <p>国内不可清关物品：</p> <p>国际奢侈品牌（如LV,爱马仕，阿玛尼，普拉达，迪奥等）、名牌手表、名牌化妆品（ESTÉE LAUDER、LANCOME）、奶粉、手机、笔记本电脑、平板电脑、人参、花旗参、西洋参、海参、鱼翅、燕窝、电脑配件、相机及镜头、bose音箱、医疗用品、药物类、汽车配件、易燃易爆危险品、易腐蚀品、管制刀具、毒品、军火、文物古玩、有价证券、国家货币、贵重金银首饰，钻石，海关明文规定禁运物品； </p> </div> </div> </div>",
+      TypeId: 1,
+      IsChoice: true
+    }, {
+      TypeHtml: "大包普通件全额关税补贴， 适用于母婴产品，一般保健品，普通衣物，鞋帽，普货，价格为$5一磅",
+      TypeId: 2,
+      IsChoice: false
+    }, {
+      TypeHtml: "大包商业件全额关税补贴，化妆品类、包包、单价100刀品牌服装、品牌鞋子等，价格为$5一磅",
+      TypeId: 3,
+      IsChoice: false
+    }, {
+      TypeHtml: "大包特殊件全额关税补贴，电子产品，手表，高价格品牌服装、品牌鞋子等，价格为$5一磅，另外会有强制处理费。",
+      TypeId: 4,
+      IsChoice: false
+    }],
+    SendAddress: "flfly 12035 NE Marx ST Portland OR 97220 503-567-9758",
+    ReceiveAddress: "张三丰 13313331333 中国 浙江省 杭州市 临安市 中环大厦1-102 314000",
+    ServiceList: [{
+      name : 'name01' ,
+      IsMutileChoice: false,
+      SubServiceList: [{
+        Id: 1,
+        serviceHtml: "&lt;a&gt;&lt;strong&gt;内部填充加固&lt;/strong&gt;&lt;/a&gt;&lt;span style=&quot;color:#555555;font-family:Arial, Helvetica, sans-serif;font-size:13px;line-height:13px;background-color:#FFFFFF;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-size:13px;font-family:Arial, Helvetica, sans-serif;vertical-align:baseline;color:#555555;line-height:13px;background-color:#FFFFFF;&quot;&gt;$3.00&lt;/span&gt;&lt;span style=&quot;color:#555555;font-family:Arial, Helvetica, sans-serif;font-size:13px;line-height:13px;background-color:#FFFFFF;&quot;&gt;/箱&lt;/span&gt;",
+        Amout: 3,
+        CalculateFun: 0,
+        IsChoice: true
+      }, {
+        Id: 2,
+        serviceHtml: "&lt;a&gt;&lt;strong&gt;简易打包&lt;/strong&gt;&lt;/a&gt;&lt;span style=&quot;color:#555555;font-family:Arial, Helvetica, sans-serif;font-size:13px;line-height:13px;background-color:#FFFFFF;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-size:13px;font-family:Arial, Helvetica, sans-serif;vertical-align:baseline;color:#555555;line-height:13px;background-color:#FFFFFF;&quot;&gt;$1.00&lt;/span&gt;&lt;span style=&quot;color:#555555;font-family:Arial, Helvetica, sans-serif;font-size:13px;line-height:13px;background-color:#FFFFFF;&quot;&gt;/箱&lt;/span&gt;",
+        Amout: 1,
+        CalculateFun: 0,
+        IsChoice: false
+      }, {
+        Id: 3,
+        serviceHtml: "&lt;strong&gt;原箱转运(&lt;span style=&quot;color:#E53333;&quot;&gt;产生体积重可能性较高&lt;/span&gt;)&lt;/strong&gt; $0.00/件",
+        Amout: 0,
+        CalculateFun: 0,
+        IsChoice: false
+      }]
+    }, {
+      name : 'name02' , 
+      IsMutileChoice: true,
+      SubServiceList: [{
+        Id: 8,
+        serviceHtml: "&lt;span style=&quot;color:#555555;font-family:tahoma, verdana, arial, helvetica, sans-serif;font-size:14px;line-height:14px;background-color:#FFFFFF;&quot;&gt;&lt;strong&gt;取出宣传资料&lt;/strong&gt;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-size:14px;font-family:tahoma, verdana, arial, helvetica, sans-serif;vertical-align:baseline;color:#555555;line-height:14px;background-color:#FFFFFF;&quot;&gt;$0.00&lt;/span&gt;&lt;span style=&quot;color:#555555;font-family:tahoma, verdana, arial, helvetica, sans-serif;font-size:14px;line-height:14px;background-color:#FFFFFF;&quot;&gt;/件&lt;/span&gt;",
+        Amout: 0,
+        CalculateFun: 0,
+        IsChoice: false
+      }, {
+        Id: 9,
+        serviceHtml: "&lt;span style=&quot;color:#555555;font-family:tahoma, verdana, arial, helvetica, sans-serif;font-size:14px;line-height:14px;background-color:#FFFFFF;&quot;&gt;&lt;strong&gt;去除发票&lt;/strong&gt;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-size:14px;font-family:tahoma, verdana, arial, helvetica, sans-serif;vertical-align:baseline;color:#555555;line-height:14px;background-color:#FFFFFF;&quot;&gt;$0.00&lt;/span&gt;&lt;span style=&quot;color:#555555;font-family:tahoma, verdana, arial, helvetica, sans-serif;font-size:14px;line-height:14px;background-color:#FFFFFF;&quot;&gt;/件&lt;/span&gt;",
+        Amout: 0,
+        CalculateFun: 0,
+        IsChoice: false
+      }]
+    }, {
+      name : 'name03' ,
+      IsMutileChoice: false,
+      SubServiceList: [{
+        Id: 11,
+        serviceHtml: "顺风(&lt;span style=&quot;color:#E53333;&quot;&gt;转运物品每磅需要加收$1&lt;/span&gt;)",
+        Amout: 1,
+        CalculateFun: 1,
+        IsChoice: true
+      }, {
+        Id: 12,
+        serviceHtml: "其他",
+        Amout: 0,
+        CalculateFun: 0,
+        IsChoice: false
+      }, {
+        Id: 13,
+        serviceHtml: "韵达",
+        Amout: 6,
+        CalculateFun: 1,
+        IsChoice: false
+      }]
+    }],
+    PackRemark: null,
+    FreightSetup: {
+      FreightSetupStr: "首重2磅，首重费用：$10.00，续重费用：$5.00,小数点进位值：0.50",
+      FirstMoney: 10,
+      NexMoney: 5,
+      FirstWeight: 2,
+      WeightPoint: 0.5,
+      FlyVolumeSet: 139,
+      defaultMoney: 5
+    },
+    Insurance: 123
+  }
+}
+var failData = {
+  ResponseStatus: 1,
+  ResponseMsg: "运单不存在",
+  ResponseData: ""
+}
 /*--测试数据格式--*/
 
-var onGoodsTemp = Handlebars.compile($("#onGoods-template").html()),
+
+var waybillTemp = Handlebars.compile($("#waybill-template").html()),
+    packageTemp = Handlebars.compile($("#packageRadio-template").html()),
+    packageInfTemp = Handlebars.compile($("#packageInf-template").html()),
+    onGoodsTemp = Handlebars.compile($("#onGoods-template").html()),
     packGoodsTemp = Handlebars.compile($("#packGoods-template").html());
 
-var $onPackTable = $("#onPackTable").find('tbody'),
+var $waybillTable = $("#waybillList").find('tbody'),
+    $onPackTable = $("#onPackTable").find('tbody'),
     $packBoxTable = $("#packBoxTable").find('tbody');
 
 var sizeId = ["#ipLong","#ipWide","#ipHigh"]; 
 
-var Weight = 0,
+var WEIGHTURL = "http://192.168.1.120:82/Pre_Shipment/scanIncomeTrackNo",
+    Weight = 0,
+    Weight2 = 0,
+    postcodeIdList = [],
+    responseData = null,
+    packageList = [],
     packGoods = [],
     packOverGoods = []; 
 
 $(function(){
-    
-   init();
+   //扫描运单
+   scansWaybill();
 
-   keyLive();   
+   //信息展示
+   infInit();
 
-   countLwg();
+   // 分包
+   // partBox();
+   
+
+   // ajax(WEIGHTURL,{
+   //   IncomeTrackNo : 
+   //        },function(json){
+   //          console.log(json) 
+   //        })
 })
 
+/*-----------------运单号扫描-------------------*/
+var wyOnce = true;
+$("#wayReset").on("click",function(){
+    wyOnce = true;
+    $waybillTable.html("");
+    $("#waybillId").val("");
+    $("#waybillId").focus();
+})
 
-function init(){
-   packGoods = goodsList;
+function scansWaybill(){
+    $("#waybillId").focus();
+    
+    $("#waybillId").on("change",function(){
+       var sid = $(this).val();
+
+       if(wyOnce){
+          // ajax(WEIGHTURL,{
+          //   IncomeTrackNo :sid
+          // },function(json){
+          //   console.log(json) 
+          // })
+          json = successData;
+
+          if(json.ResponseStatus == 1){
+            $("#wayState").find(".wait").hide();
+            $("#wayState").find(".failWait").html(json.ResponseMsg);  
+            $("#wayState").find(".failWait").show();           
+          }else{
+            responseData = json.ResponseData;
+            packageList = json.ResponseData.IncomePackageList;
+         
+            postcodeIdList.push(sid);  
+                       
+            wayTemp();
+
+            wyOnce = false;
+          }
+       }else{
+            postcodeIdList.push(sid);  
+
+            wayTemp();
+       }
+
+       $("#waybillId").select();
+    })     
+}
+
+function wayTemp(){
+    var newpack = [];
+    var isList = true; 
+
+    for (var i = 0; i < packageList.length; i++) {
+         for (var n = 0; n < postcodeIdList.length; n++) {
+              if ( packageList[i].postcodeId ==  postcodeIdList[n]) {
+                   packageList[i].isScan = true;
+              };            
+         };
+         newpack.push(packageList[i])
+    };
+     
+    $waybillTable.html(waybillTemp({'packageList': newpack }));
+
+    for (var m = 0; m < newpack.length; m++) {
+         isList = !!newpack[m].isScan && isList;  
+    };
+
+    if(isList){
+      waySuccess();
+    }
+}  
+
+function waySuccess(){
+    $("#wayState").find(".wait").hide();
+    $("#wayState").find(".failWait").hide();
+    $("#wayState").find(".finish").show();
+
+    infInit();
+}
+
+/*-----------------信息确认---------------------*/
+function infInit(){
+
+    //需要获取数据
+    responseData =successData.ResponseData; 
+
+    if(responseData){
+       
+       if(responseData.PackTypeList){
+          infPackInf(responseData.PackTypeList);
+       }
+        
+       infAddress(responseData.SendAddress,responseData.ReceiveAddress);
+
+       if(responseData.ServiceList){
+          infContent(responseData.ServiceList,responseData.Insurance,responseData.PackRemark) 
+       } 
+
+       if(responseData.FreightSetup){
+          infWeight(responseData.FreightSetup)
+       }
+
+       if(responseData.IncomePackageList){
+          partBox(responseData.IncomePackageList) 
+       }
+
+       $("#jwgInf").show();
+       $("#jwgWeight").show();
+    }
+}
+
+//包裹类型
+function infPackInf(data){
+   $("#packageRadio").html(packageTemp({'packageRadio':data}));
+}
+
+//地址信息
+function infAddress(SendAddress,ReceiveAddress){
+
+    $("#sendAddress").html(SendAddress);
+
+    $("#receiveAddress").html(ReceiveAddress);
+}
+
+//内容填充
+function infContent(data,cost,remark){
+
+    for (var i = 0; i < data.length; i++) {
+         var name = data[i].name,
+             list = data[i].SubServiceList;
+
+         for (var n = 0; n < list.length; n++) {
+               list[n].name =name; 
+         };    
+    };
+
+    $("#packageInfOne").html(packageInfTemp({"packageInf": data}));
+    $("#packageInfTwo").find("#insuranceCost").val(cost); 
+    $("#packageInfTwo").find("#userRemark").html(remark);
+}
+
+//物品重量
+function infWeight(data){
+     
+    //重量
+    keyLive();
+
+    //计算
+    countLwg();
+
+}
+
+
+/*-----------------分包管理----------------------*/
+function partBox(data){
+   packGoods = data;
    
    $onPackTable.html(onTemplate(packGoods)); 
 }
@@ -295,7 +579,7 @@ function deleteBut(this_){
                 };   
               } 
           }
-      }  
+      }
    }
 }
 
@@ -427,11 +711,20 @@ function splitBut(this_){
 //不拆分立即打包  --全部移入打包
 $("#promptlyAllBut").on("click",function(){
 
-	  $onPackTable.html("");
-    
-      var gHtml = packGoods({'Goods':goods});
+    packOverGoods = goodsList;  
 
-      $packBoxTable.html(gHtml); 
+    var newPackGoods = clone(packGoods);
+
+    for (var i = 0; i < newPackGoods.length; i++) {
+         newPackGoods[i].goods=[];
+    };
+
+	  $onPackTable.html(onTemplate(newPackGoods)); 
+
+    packGoods = newPackGoods;
+
+    $packBoxTable.html(packTemplate(packOverGoods)); 
+
 })
 
 //完成并进行打印  --进行称重操作
@@ -448,20 +741,20 @@ $("#checkWeight").on("click",function(){
             alert("商品还未进行称重不能进行修改");
             $(this).attr("checked",false);
         }else{
-        	$("#amendWg").show();
+        	$("#amendWg").attr("disabled", false)
         } 
 	 }else{
-        $("#ipWeight").val(Weight);
-        $("#amendWg").hide();
+        $("#ipWeight").html(Weight);
+        $("#amendWg").attr("disabled", true)
 	 }
 })
 
-$("#newSubmit").on("click",function(){
-	 if($("#newWeight").val() ==="" ){
+$("#amendWg").on("blur",function(){
+	 if($("#amendWg").val() ==="" ){
        alert("填写数据不能为空")
 	 }else{
-	 	    $("#ipWeight").val($("#newWeight").val());
-        $("#amendWg").hide();	 	
+	 	    $("#ipWeight").html($("#amendWg").val());
+        $("#amendWg").attr("disabled", true)
 	 }
 })
 
@@ -474,14 +767,15 @@ $("#checkSize").on("click",function(){
       } else {
         for (var i = 0; i < sizeId.length; i++) {
           $(sizeId[i]).attr("disabled", false);
-        };      
+        };  
+        Weight2 = parseFloat( $("#ipWeight").html(),10);    
       }
    }else{
       for (var i = 0; i < sizeId.length; i++) {
          $(sizeId[i]).attr("disabled", true);
          $(sizeId[i]).val("");
 
-         $("#ipWeight").val(Weight);
+         $("#ipWeight").html(Weight2);
       };
    }
 })
@@ -508,30 +802,42 @@ function countLwg(){
 
 function weighting(Long,Wide,High){
     var W1 = parseFloat(Long,10)*parseFloat(Wide,10)*parseFloat(High,10),
-        W2 = (Weight+W1)/2;
+        W2 = (Weight2+W1)/2;
 
     if(W1>Weight){
-        $("#ipWeight").val(W2);
+        $("#ipWeight").html(W2);
     }
+}
+
+function keyLive(){
+   var weig=setInterval(function(){
+      if($("#ipWeightHi").val() === ""){
+
+         $("#ipWeightHi").focus();  
+      }else{
+
+         Weight = parseFloat($("#ipWeightHi").val())
+
+         $("#ipWeight").html(Weight);
+         clearInterval(weig);
+      }
+   },1500)
 }
 /*--计算公式--*/
 
 
-
 /*---tool(工具)---*/
-function keyLive(){
-   var weig=setInterval(function(){
-   	  if($("#ipWeightHi").val() === ""){
-
-         $("#ipWeightHi").focus();  
-   	  }else{
-
-         Weight = parseFloat($("#ipWeightHi").val())
-
-   	  	 $("#ipWeight").val(Weight);
-         clearInterval(weig);
-   	  }
-   },1500)
+function ajax(url,data,callback){
+    $.ajax({
+       type: "get",
+       url: url,
+       dataType: "jsonp",
+       jsonp: "jsoncallback",
+       data: data,
+       success: function(json) {
+            callback && callback(json);
+       }
+    })  
 }
 
 Array.prototype.remove=function(dx)
@@ -545,4 +851,43 @@ Array.prototype.remove=function(dx)
 　　　　}
 　　}
 　　this.length-=1
+}
+
+function clone(obj)
+{
+  var o,i,j,k;
+  if(typeof(obj)!="object" || obj===null)return obj;
+  if(obj instanceof(Array))
+  {
+    o=[];
+    i=0;j=obj.length;
+    for(;i<j;i++)
+    {
+      if(typeof(obj[i])=="object" && obj[i]!=null)
+      {
+        o[i]=arguments.callee(obj[i]);
+      }
+      else
+      {
+        o[i]=obj[i];
+      }
+    }
+  }
+  else
+  {
+    o={};
+    for(i in obj)
+    {
+      if(typeof(obj[i])=="object" && obj[i]!=null)
+      {
+        o[i]=arguments.callee(obj[i]);
+      }
+      else
+      {
+        o[i]=obj[i];
+      }
+    }
+  }
+ 
+  return o;
 }

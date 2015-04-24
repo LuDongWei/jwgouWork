@@ -14,9 +14,46 @@
 <body>
 
 <style type="text/css">
-.jwg-weight{
-     padding:5px;
-}	
+body{
+	padding:5px;
+}
+/*运单扫描*/
+.jwg-waybill .w-note{
+	font-weight:bolder;
+	font-size:18px;
+}
+.w-note span{
+   color:#ff6666;
+}
+.jwg-waybill .waybillState{
+    font-weight:bolder;
+	font-size:18px;
+}
+.waybillState .finish{
+	color:#41a903;
+}
+.waybillState .failWait{
+    color:#ff6666;
+}
+/*信息确认*/
+
+/*商品打包*/
+.allWeight{
+	font-size:20px;
+	line-height:64px;
+}
+.allWeight .w-logo{
+	display:block;
+	width:85px;
+	height:64px;
+	float:left;
+}
+.allWeight .w-pound{
+	font-size:35px;
+}
+.allWeight .red{
+    color:#ff6666;
+}
 .weight-table .table th,.weight-table .table td{
     text-align:center; 
 }
@@ -29,70 +66,127 @@
 }
 </style> 
 
-<div class="jwg-weight">
+<!--运单扫描-->
+<div class="jwg-waybill">
 	<div class="panel panel-default">
-		<div class="panel-heading text-center">产品打包处理</div>
-		<div class="panel-body">            
-            <!--商品拆分箱-->
-		    <div class="weight-table row">
-		    	<div class="col-sm-5">
-		    		<table class="table table-bordered table-hover" id="onPackTable">
-		    			<caption class="text-center">分配需要打包的商品</caption>
-		    			<thead>
-		    				<tr>
-		    				    <th>商品运单</th>
-		    					<th>商品名称</th>
-		    					<th>数量</th>
-		    					<th>拆分个数</th>
-		    					<th>操作</th>
-		    				</tr>
-		    			</thead>
-		    			<tbody>
-		    				<tr>
-		    				    <td>2000</td>
-		    					<td>Mark</td>
-		    					<td>1</td>
-		    					<td class="wNumber">
-		    					  <input type="number" class="form-control"  value="1"> 	
-		    					</td>
-		    					<td>
-		    					  <a href="javascript:void(0)" id="splitBut" class="btn btn-default" role="button">拆分</a>
-		    					</td>
-		    				</tr>	
-		    				<tr>
-		    				    <td>2000</td>
-		    					<td>Mark</td>
-		    					<td>1</td>
-		    					<td class="wNumber">
-		    					  <input type="number" class="form-control"  value="1"> 	
-		    					</td>
-		    					<td>
-		    					  <a href="javascript:void(0)" id="splitBut" class="btn btn-default" role="button">拆分</a>
-		    					</td>
-		    				</tr>	
-		    				<tr>
-		    				    <td>2000</td>
-		    					<td>Mark</td>
-		    					<td>1</td>
-		    					<td class="wNumber">
-		    					  <input type="number" class="form-control"  value="1"> 	
-		    					</td>
-		    					<td>
-		    					  <a href="javascript:void(0)" id="splitBut" class="btn btn-default" role="button">拆分</a>
-		    					</td>
-		    				</tr>		    				
-		    			</tbody>
-		    		</table>
-		    	</div>
-		    	<div class="col-sm-7">
-                    
-                    <!--商品需要计算信息-->
-                    <div class="form-horizontal">
+		<div class="panel-heading text-center">运单扫描</div>
+		<div class="panel-body">
+            <div class="row">
+            	<div class="col-sm-6">
+                   <div id="waybillNum">
+                   	<h3><strong>请扫描运单号：</strong></h3>
+                       <div class="form-group">
+                          <input type="text" class="form-control" id="waybillId" placeholder="扫描输入">
+                       </div>                      
+                   	   <div class="waybillState" id="wayState">
+                   	       <div class="row">
+                   	          <div class="col-sm-6">
+                                   <span class="wait">待扫描。。。</span>
+                   	               <span class="failWait" style="display:none">错误</span>
+                   	               <span class="finish" style="display:none">完成扫描</span>
+                   	          </div>
+                   	          <div class="col-sm-6 text-right">
+                                   <a href="javascript:void(0)" id="wayReset" class="btn btn-danger" role="button">重置</a>
+                   	          </div>
+                   	       </div> 
+                   	   </div>
+                   </div>
+            	</div>
+                <div class="col-sm-6">
+                    <table class="table" id="waybillList">
+                    	<h3><strong>待打包运单列表：</strong></h3>
+                    	<thead>
+                    		<tr>
+                    			<th>运单编号</th>
+                    			<th>运单类型</th>
+                    			<th>货架号</th>
+                    			<th>扫描状态</th>
+                    		</tr>
+                    	</thead>
+                    	<tbody>
+                    		<!-- <tr data-id="sdsdsdsdsd">
+                    			<td>sdsdsdsdsd</td>
+                    			<td>UPS</td>
+                    			<td>A2</td>
+                    			<td>已扫描状态</td>
+                    		</tr> -->
+                    	</tbody>
+                    </table>
+                    <p class="w-note"><span>绿色为已经扫描</span>全部扫描完成后出来下面的部分</p>
+            	</div>
+            </div>
+		</div> 
+	</div>
+</div>
+<!--运单扫描-->
+
+<!--信息确认-->
+<div class="jwg-infAffirm" id="jwgInf" style="display:none">
+	<div class="panel panel-default">
+		<div class="panel-heading text-center">信息确认</div>
+		<div class="panel-body">
+
+            <!--信息确认 01-->
+            <div class="row">
+            	<div class="col-sm-6">
+                    <div class="packageType">
+                    	<h4><strong>包裹类型：</strong></h4>
+                        <div id="packageRadio">
+	                        <!-- <div class="radio" >
+	                        	<label>
+	                        		<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>                        
+	                        		Option one is this and that&mdash;be sure to include why it's great
+	                        	</label>
+	                        </div> -->
+                        </div>
+                    </div> 
+            	</div>
+            	<div class="col-sm-6">
+                    <div id="addressinf">
+                    	<h4><strong>地址信息：</strong></h4> 
+                        <p><span>发货地址：</span><span id="sendAddress"></span></p>
+                        <p><span>收货地址：</span><span id="receiveAddress"></span></p>  
+                    </div> 
+            	</div>
+            </div>	 
+            <!--信息确认 01-->
+
+            <!--信息确认 02-->  
+            <div class="row">
+            	<div class="col-sm-6">
+            		<div class="packageInf" id="packageInfOne">                  
+            		</div>
+            		<div id="packageInfTwo">
+            		   <div class="form-inline">
+            				<div class="form-group">
+            					<label for="exampleInputName2">保险（实际的物品价值）：$</label>
+            					<input type="text" class="form-control" id="insuranceCost"  style="width:100px;" disabled></div>
+            			    &nbsp;&nbsp;&nbsp;&nbsp;		
+            				<div class="form-group">
+            					<label for="exampleInputEmail2">其他费用：$</label>
+            					<input type="email" class="form-control" id="otherCost" style="width:100px;"></div>
+            			</div>
+            			<p class="help-block">用户备注：<span id="userRemark"></span></p>  
+            		</div>
+            	</div>
+            	<div class="col-sm-6">
+            		<!--商品需要计算信息-->
+            		<div class="row allWeight">
+            			<span class="w-logo">
+            				<img src="./src/iconfont-yibiao.png" width="64px" height="64px"></span>
+            				<span class="w-pound red" id="ipWeight">0</span>
+            				<span class="w-introduce">
+            					磅(计费重量，
+            					<span class="red">$5</span>
+            					/磅)
+            				</span>
+            		</div>
+                    <div class="form-horizontal row">
                         <div class="col-sm-3">
                             <div class="form-group" style="margin-bottom:0px;">
                             	<h5 class="text-center">物品重量(1b)</h5>
-                            	<input type="number" class="form-control" id="ipWeight" placeholder="包裹重量" value="" disabled >
-                            	<input type="text" id="ipWeightHi" value="" style="font-size: 0px;
+                            	<input type="number" class="form-control" id="amendWg"  value="" disabled >
+                            	<input type="text" id="ipWeightHi" value=""  style="font-size: 0px;
 border: none;" >
                             </div>
                             <div class="form-group"> 
@@ -103,12 +197,12 @@ border: none;" >
                             	</label>
                               </div> 	                          	
                             </div>
-                            <div id="amendWg" style="display:none;">
+<!--                             <div id="amendWg" style="display:none;">
 	                            <div class="form-group">
 	                                <input type="number" class="form-control" id="newWeight" placeholder="" value="" >                              
 	                            </div>
 	                            <a href="javascript:void(0)" id="newSubmit" class="btn btn-warning" role="button">完成重量修改</a>
-                            </div>
+                            </div> -->
                         </div>
                         <div class="col-sm-8 col-sm-offset-1">
                             <div class="form-inline row" >
@@ -135,13 +229,81 @@ border: none;" >
                                                        
                             <div class="form-group checkbox">
                             	<label>
-                            		<input type="checkbox"  id="checkSize"  >商品体积计算</label>
-                            	<!-- <p class="help-block">长*宽*高</p> -->
+                            		<input type="checkbox"  id="checkSize"  >商品体积计算</label>                           
                             </div>
                         </div>
 		    		</div>
+		    	    <div class="row">
+		    	       <div class="col-sm-12">
+                         <p >1.当不需要计算体积重量时，计费重量 = 实际重量</p>
+                         <p >2.当体积重量大于实际重量时，计费重量 = （体积重量+实际重量）/2</p>
+                       </div> 
+                    </div>                   
 		    		<!--商品需要计算信息-->
+            	</div>
+            </div>
+            <!--信息确认 02-->
+		</div> 
+	</div>
+</div>	
 
+
+<!--商品打包-->
+<div class="jwg-weight" id="jwgWeight" style="display:none">
+	<div class="panel panel-default">
+		<div class="panel-heading text-center">产品打包处理</div>
+		<div class="panel-body">
+            <!--操作条-->
+            <div class="row">
+            	<div class="col-sm-6">
+            	    <label class="radio-inline">
+            	    		<input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">小包裹口岸</label>
+            	    <label class="radio-inline">
+            	    		<input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">大包裹口岸</label>
+            	    <a class="btn btn-default" href="#" role="button">无需拆分,完成打包并提交</a>
+                    <a class="btn btn-default" href="#" role="button">无需拆分，完成打包并打印面单</a>
+            	</div>
+            	<div class="col-sm-6">
+                    <label class="radio-inline">
+            	    		<input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">小包裹口岸</label>
+            	    <label class="radio-inline">
+            	    		<input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">大包裹口岸</label>
+            	    <a class="btn btn-default" href="#" role="button">完成打包并提交</a>
+                    <a class="btn btn-default" href="#" role="button">完成打包并打印面单</a>	 
+            	</div>
+            </div>
+            <!--操作条-->
+
+            <!--商品拆分箱-->
+		    <div class="weight-table row">
+		    	<div class="col-sm-6">
+		    		<table class="table table-bordered table-hover" id="onPackTable">
+		    			<caption class="text-center">分配需要打包的商品</caption>
+		    			<thead>
+		    				<tr>
+		    				    <th>商品运单</th>
+		    					<th>商品名称</th>
+		    					<th>数量</th>
+		    					<th>拆分个数</th>
+		    					<th>操作</th>
+		    				</tr>
+		    			</thead>
+		    			<tbody>
+		    				<tr>
+		    				    <td>2000</td>
+		    					<td>Mark</td>
+		    					<td>1</td>
+		    					<td class="wNumber">
+		    					  <input type="number" class="form-control"  value="1"> 	
+		    					</td>
+		    					<td>
+		    					  <a href="javascript:void(0)" id="splitBut" class="btn btn-default" role="button">拆分</a>
+		    					</td>
+		    				</tr>			    				
+		    			</tbody>
+		    		</table>
+		    	</div>
+		    	<div class="col-sm-6">
 		    		<table class="table table-bordered table-hover" id="packBoxTable">
 		    			<caption class="text-center">本包裹已经选择了的商品</caption>
 		    			<thead>
@@ -152,15 +314,14 @@ border: none;" >
 		    					<th>操作</th>
 		    				</tr>
 		    			</thead>
-		    			<tbody>
-		    				
+		    			<tbody>		    				
 		    			</tbody>
 		    		</table>
 		    	</div>
 		    </div>
 		    <!--商品拆分箱-->
             
-            <div class="weight-operate">
+            <!-- <div class="weight-operate">
                  <div class="row">
 			    	<div class="col-sm-5 text-right">
 			    	  <a href="javascript:void(0)" id="promptlyAllBut" class="btn btn-info" role="button">不拆分立即打包</a>
@@ -169,10 +330,34 @@ border: none;" >
 			    	   <a href="javascript:void(0)" id="parcelUpBut" class="btn btn-success" role="button">完成并进行打印</a>
 			    	</div> 
 			      </div>  	
+            </div> -->
+
+            <!--操作条-->
+            <div class="row">
+            	<div class="col-sm-6">
+            	    <label class="radio-inline">
+            	    		<input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">小包裹口岸</label>
+            	    <label class="radio-inline">
+            	    		<input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">大包裹口岸</label>
+            	    <a class="btn btn-default" href="#" role="button">无需拆分,完成打包并提交</a>
+                    <a class="btn btn-default" href="#" role="button">无需拆分，完成打包并打印面单</a>
+            	</div>
+            	<div class="col-sm-6">
+                    <label class="radio-inline">
+            	    		<input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">小包裹口岸</label>
+            	    <label class="radio-inline">
+            	    		<input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">大包裹口岸</label>
+            	    <a class="btn btn-default" href="#" role="button">完成打包并提交</a>
+                    <a class="btn btn-default" href="#" role="button">完成打包并打印面单</a>	 
+            	</div>
             </div>
+            <!--操作条-->
+
 		</div>
 	</div>
 </div>
+<!--商品打包-->
+
 
 <!-- <div class="modal fade goWeight" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-sm">
@@ -189,6 +374,73 @@ border: none;" >
     </div>
   </div>
 </div> -->
+
+
+<script id="packageInf-template" type="text/x-handlebars-template">
+{{#packageInf}}
+     <div class="form-group packBox" data-name="{{name}}">
+	     {{#if IsMutileChoice}}
+            {{#SubServiceList}}           
+            	 <label class="checkbox-inline">
+            	  {{#if IsChoice}}
+            		 <input type="checkbox" name="{{name}}" value="{{Id}}" checked>
+                  {{else}}
+                     <input type="checkbox" name="{{name}}" value="{{Id}}">
+                  {{/if}} 
+            	 {{serviceHtml}}
+            	 </label>
+            {{/SubServiceList}}
+	     {{else}}
+	        {{#SubServiceList}}	          
+               <label class="radio-inline">
+                  {{#if IsChoice}}
+					<input type="radio" name="{{name}}"  value="{{Id}}" checked>
+				  {{else}}
+				     <input type="radio" name="{{name}}"  value="{{Id}}">
+				  {{/if}} 	
+			    {{serviceHtml}}
+			   </label>
+	        {{/SubServiceList}}
+	     {{/if}}
+     </div>
+{{/packageInf}}
+</script>
+
+
+<script id="packageRadio-template" type="text/x-handlebars-template">
+{{#packageRadio}}
+<div class="radio" >
+	<label>
+	    {{#if IsChoice}}
+		 <input type="radio" name="packageRadio"  value="{{TypeId}}" checked>
+		{{else}}
+         <input type="radio" name="packageRadio"  value="{{TypeId}}" > 
+		{{/if}}
+		{{TypeHtml}}                        
+	</label>
+</div>
+{{/packageRadio}}	
+</script>
+
+
+<script id="waybill-template" type="text/x-handlebars-template">
+{{#packageList}}
+{{#if isScan}}
+<tr class="success" data-id="{{postcodeId}}">
+{{else}}
+<tr data-id="{{postcodeId}}">
+{{/if}}
+	<td>{{postcodeId}}</td>
+	<td>{{Type}}</td>
+	<td>{{ShelfNo}}</td>
+	{{#if isScan}}
+       <td>已扫描</td> 
+	{{else}}
+	   <td>未扫描</td>
+	{{/if}}
+</tr>
+{{/packageList}}
+</script>
 
 
 <script id="onGoods-template" type="text/x-handlebars-template">
