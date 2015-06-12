@@ -11,60 +11,9 @@
 <script type="text/javascript" src="spm_modules/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="spm_modules/handlebars/2.0.0/dist/handlebars.js"></script>
 
+<link rel="stylesheet" type="text/css" href="./weight.css" media="all" />
+
 <body>
-
-<style type="text/css">
-body{
-	padding:5px;
-}
-/*运单扫描*/
-.jwg-waybill .w-note{
-	font-weight:bolder;
-	font-size:18px;
-}
-.w-note span{
-   color:#ff6666;
-}
-.jwg-waybill .waybillState{
-    font-weight:bolder;
-	font-size:18px;
-}
-.waybillState .finish{
-	color:#41a903;
-}
-.waybillState .failWait{
-    color:#ff6666;
-}
-/*信息确认*/
-
-/*商品打包*/
-.allWeight{
-	font-size:20px;
-	line-height:64px;
-}
-.allWeight .w-logo{
-	display:block;
-	width:85px;
-	height:64px;
-	float:left;
-}
-.allWeight .w-pound{
-	font-size:35px;
-}
-.allWeight .red{
-    color:#ff6666;
-}
-.weight-table .table th,.weight-table .table td{
-    text-align:center; 
-}
-.weight-table .wNumber input{
-	width:70px;
-	margin:0 auto;
-}
-.weight-operate{
-
-}
-</style> 
 
 <!--运单扫描-->
 <div class="jwg-waybill">
@@ -332,6 +281,28 @@ border: none;" >
 			      </div>  	
             </div> -->
 
+            <!--运单价格-->
+            <div class="row waybill-price">
+              <div class="col-sm-6 col-sm-offset-6">
+                  <div class="form-inline text-right">
+                    <div class="form-group price-item">
+                      <label for="carriagePrice">运输费用：$&nbsp;&nbsp;</label>
+                      <input type="text" class="form-control" id="carriagePrice"  disabled></div>
+                    <div class="form-group price-item">
+                      <label for="servicePrice">服务费用：$&nbsp;&nbsp;</label>
+                      <input type="text" class="form-control" id="servicePrice"  disabled></div>
+                    <div class="form-group price-item">
+                      <label for="otherPrice">其他费用：$&nbsp;&nbsp;</label>
+                      <input type="text" class="form-control" id="otherPrice"  disabled></div> 
+                    <div class="form-group price-item">
+                      <label for="totalPrice">总和：$&nbsp;&nbsp;</label>
+                      <input type="text" class="form-control" id="totalPrice"  disabled></div>
+                  </div>
+              </div>
+            </div>
+            <!--运单价格-->
+
+
             <!--操作条-->
             <div class="row">
             	<div class="col-sm-6">
@@ -383,9 +354,9 @@ border: none;" >
             {{#SubServiceList}}           
             	 <label class="checkbox-inline">
             	  {{#if IsChoice}}
-            		 <input type="checkbox" name="{{name}}" value="{{Id}}" checked>
+            		 <input type="checkbox" name="{{name}}" value="{{Id}}" data-price="{{Amout}}" checked>
                   {{else}}
-                     <input type="checkbox" name="{{name}}" value="{{Id}}">
+                     <input type="checkbox" name="{{name}}" value="{{Id}}" data-price="{{Amout}}">
                   {{/if}} 
             	 {{serviceHtml}}
             	 </label>
@@ -394,9 +365,9 @@ border: none;" >
 	        {{#SubServiceList}}	          
                <label class="radio-inline">
                   {{#if IsChoice}}
-					<input type="radio" name="{{name}}"  value="{{Id}}" checked>
+					<input type="radio" name="{{name}}"  value="{{Id}}" data-price="{{Amout}}" checked>
 				  {{else}}
-				     <input type="radio" name="{{name}}"  value="{{Id}}">
+				     <input type="radio" name="{{name}}"  value="{{Id}}" data-price="{{Amout}}">
 				  {{/if}} 	
 			    {{serviceHtml}}
 			   </label>
@@ -412,9 +383,9 @@ border: none;" >
 <div class="radio" >
 	<label>
 	    {{#if IsChoice}}
-		 <input type="radio" name="packageRadio"  value="{{TypeId}}" checked>
+		 <input type="radio" name="packageRadio"  value="{{TypeId}}"  checked>
 		{{else}}
-         <input type="radio" name="packageRadio"  value="{{TypeId}}" > 
+         <input type="radio" name="packageRadio"  value="{{TypeId}}"  > 
 		{{/if}}
 		{{TypeHtml}}                        
 	</label>

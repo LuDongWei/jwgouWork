@@ -34,7 +34,7 @@ var successData = {
       }]
     }],
     PackTypeList: [{
-      TypeHtml: "小包直邮件有客户自行支付关税，需提供身份证，我们代为申报（价格为$5一磅）<div id='centerdiv' align='center'> <div class='notification attention png_bg'> <a href='#' class='close'><img src='/resources/images/icons/cross_grey_small.png' title='Close this notification' alt='close' /></a> <div align='center' style=' font-size:15px;text-align:left'> <p>每个包裹最好控制在3KG以内，超过3KG我们有权分包裹转运，转换大包裹转运。</p> <p>国内不可清关物品：</p> <p>国际奢侈品牌（如LV,爱马仕，阿玛尼，普拉达，迪奥等）、名牌手表、名牌化妆品（ESTÉE LAUDER、LANCOME）、奶粉、手机、笔记本电脑、平板电脑、人参、花旗参、西洋参、海参、鱼翅、燕窝、电脑配件、相机及镜头、bose音箱、医疗用品、药物类、汽车配件、易燃易爆危险品、易腐蚀品、管制刀具、毒品、军火、文物古玩、有价证券、国家货币、贵重金银首饰，钻石，海关明文规定禁运物品； </p> </div> </div> </div>",
+      TypeHtml: "小包直邮件有客户自",
       TypeId: 1,
       IsChoice: true
     }, {
@@ -57,19 +57,19 @@ var successData = {
       IsMutileChoice: false,
       SubServiceList: [{
         Id: 1,
-        serviceHtml: "&lt;a&gt;&lt;strong&gt;内部填充加固&lt;/strong&gt;&lt;/a&gt;&lt;span style=&quot;color:#555555;font-family:Arial, Helvetica, sans-serif;font-size:13px;line-height:13px;background-color:#FFFFFF;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-size:13px;font-family:Arial, Helvetica, sans-serif;vertical-align:baseline;color:#555555;line-height:13px;background-color:#FFFFFF;&quot;&gt;$3.00&lt;/span&gt;&lt;span style=&quot;color:#555555;font-family:Arial, Helvetica, sans-serif;font-size:13px;line-height:13px;background-color:#FFFFFF;&quot;&gt;/箱&lt;/span&gt;",
+        serviceHtml: "内部填充加固",
         Amout: 3,
         CalculateFun: 0,
         IsChoice: true
       }, {
         Id: 2,
-        serviceHtml: "&lt;a&gt;&lt;strong&gt;简易打包&lt;/strong&gt;&lt;/a&gt;&lt;span style=&quot;color:#555555;font-family:Arial, Helvetica, sans-serif;font-size:13px;line-height:13px;background-color:#FFFFFF;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-size:13px;font-family:Arial, Helvetica, sans-serif;vertical-align:baseline;color:#555555;line-height:13px;background-color:#FFFFFF;&quot;&gt;$1.00&lt;/span&gt;&lt;span style=&quot;color:#555555;font-family:Arial, Helvetica, sans-serif;font-size:13px;line-height:13px;background-color:#FFFFFF;&quot;&gt;/箱&lt;/span&gt;",
-        Amout: 1,
+        serviceHtml: "简易打包",
+         Amout: 1,
         CalculateFun: 0,
         IsChoice: false
       }, {
         Id: 3,
-        serviceHtml: "&lt;strong&gt;原箱转运(&lt;span style=&quot;color:#E53333;&quot;&gt;产生体积重可能性较高&lt;/span&gt;)&lt;/strong&gt; $0.00/件",
+        serviceHtml: "原箱转运",
         Amout: 0,
         CalculateFun: 0,
         IsChoice: false
@@ -79,13 +79,13 @@ var successData = {
       IsMutileChoice: true,
       SubServiceList: [{
         Id: 8,
-        serviceHtml: "&lt;span style=&quot;color:#555555;font-family:tahoma, verdana, arial, helvetica, sans-serif;font-size:14px;line-height:14px;background-color:#FFFFFF;&quot;&gt;&lt;strong&gt;取出宣传资料&lt;/strong&gt;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-size:14px;font-family:tahoma, verdana, arial, helvetica, sans-serif;vertical-align:baseline;color:#555555;line-height:14px;background-color:#FFFFFF;&quot;&gt;$0.00&lt;/span&gt;&lt;span style=&quot;color:#555555;font-family:tahoma, verdana, arial, helvetica, sans-serif;font-size:14px;line-height:14px;background-color:#FFFFFF;&quot;&gt;/件&lt;/span&gt;",
+        serviceHtml: "取出宣传资料",
         Amout: 0,
         CalculateFun: 0,
         IsChoice: false
       }, {
         Id: 9,
-        serviceHtml: "&lt;span style=&quot;color:#555555;font-family:tahoma, verdana, arial, helvetica, sans-serif;font-size:14px;line-height:14px;background-color:#FFFFFF;&quot;&gt;&lt;strong&gt;去除发票&lt;/strong&gt;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-size:14px;font-family:tahoma, verdana, arial, helvetica, sans-serif;vertical-align:baseline;color:#555555;line-height:14px;background-color:#FFFFFF;&quot;&gt;$0.00&lt;/span&gt;&lt;span style=&quot;color:#555555;font-family:tahoma, verdana, arial, helvetica, sans-serif;font-size:14px;line-height:14px;background-color:#FFFFFF;&quot;&gt;/件&lt;/span&gt;",
+        serviceHtml: "去除发票",
         Amout: 0,
         CalculateFun: 0,
         IsChoice: false
@@ -116,12 +116,12 @@ var successData = {
     PackRemark: null,
     FreightSetup: {
       FreightSetupStr: "首重2磅，首重费用：$10.00，续重费用：$5.00,小数点进位值：0.50",
-      FirstMoney: 10,
-      NexMoney: 5,
-      FirstWeight: 2,
-      WeightPoint: 0.5,
-      FlyVolumeSet: 139,
-      defaultMoney: 5
+      FirstMoney: 0,
+      NexMoney: 5, 
+      FirstWeight: 2, 
+      WeightPoint: 0.5, //进位值
+      FlyVolumeSet: 139, //体积重转化系数
+      defaultMoney: 5  //初始化费率
     },
     Insurance: 123
   }
@@ -153,7 +153,8 @@ var WEIGHTURL = "http://192.168.1.120:82/Pre_Shipment/scanIncomeTrackNo",
     responseData = null,
     packageList = [],
     packGoods = [],
-    packOverGoods = []; 
+    packOverGoods = [],
+    WeightMoney = null; 
 
 $(function(){
    //扫描运单
@@ -315,6 +316,8 @@ function infContent(data,cost,remark){
 
 //物品重量
 function infWeight(data){
+    
+    WeightMoney = data;
      
     //重量
     keyLive();
@@ -322,6 +325,12 @@ function infWeight(data){
     //计算
     countLwg();
 
+
+    //价格计算
+    var bang = parseFloat($("#ipWeight").html(),10);
+    if( bang !=  0 ){
+       priceCompute(bang);  
+    }
 }
 
 
@@ -745,7 +754,8 @@ $("#checkWeight").on("click",function(){
         } 
 	 }else{
         $("#ipWeight").html(Weight);
-        $("#amendWg").attr("disabled", true)
+        $("#ipWeight").change();
+        $("#amendWg").attr("disabled", true);
 	 }
 })
 
@@ -754,6 +764,7 @@ $("#amendWg").on("blur",function(){
        alert("填写数据不能为空")
 	 }else{
 	 	    $("#ipWeight").html($("#amendWg").val());
+        $("#ipWeight").change();
         $("#amendWg").attr("disabled", true)
 	 }
 })
@@ -776,6 +787,7 @@ $("#checkSize").on("click",function(){
          $(sizeId[i]).val("");
 
          $("#ipWeight").html(Weight2);
+         $("#ipWeight").change();
       };
    }
 })
@@ -786,6 +798,18 @@ $("#checkSize").on("click",function(){
 // 体积重量=长（英寸）*宽（英寸）*高（英寸）/139
 // 计费重量=（体积重量+实际重量）/2
 // 当体积重量大于实际重量时，计费重量=（体积重量+实际重量）/2
+// -------------
+// 运费 = 首重价格 + (计费重量 - 首重)*续重磅率
+// FreightSetup: {
+//   FreightSetupStr: "首重2磅，首重费用：$10.00，续重费用：$5.00,小数点进位值：0.50",
+//   FirstMoney: 10,
+//   NexMoney: 5,
+//   FirstWeight: 2,
+//   WeightPoint: 0.5, //进位值
+//   FlyVolumeSet: 139, //体积重转化系数
+//   defaultMoney: 5 //初始化费率
+// },
+
 function countLwg(){
    for (var i = 0; i < sizeId.length; i++) {
      $(sizeId[i]).on("blur",function(){
@@ -801,11 +825,12 @@ function countLwg(){
 }
 
 function weighting(Long,Wide,High){
-    var W1 = parseFloat(Long,10)*parseFloat(Wide,10)*parseFloat(High,10),
+    var W1 = parseFloat(Long,10)*parseFloat(Wide,10)*parseFloat(High,10)/parseFloat(WeightMoney.FlyVolumeSet,10),
         W2 = (Weight2+W1)/2;
 
     if(W1>Weight){
         $("#ipWeight").html(W2);
+        $("#ipWeight").change();
     }
 }
 
@@ -819,10 +844,55 @@ function keyLive(){
          Weight = parseFloat($("#ipWeightHi").val())
 
          $("#ipWeight").html(Weight);
+         $("#ipWeight").change();
          clearInterval(weig);
       }
    },1500)
 }
+
+$("#ipWeight").on('change',function(){
+     var bang = parseFloat($("#ipWeight").html(),10);
+     
+     priceCompute(bang);
+})
+
+function priceCompute(bang){
+   //计算 价格
+   var weig = bang.toString().split('.'),
+       regular  = parseFloat(weig[0],10), 
+       decimals = parseFloat('0.'+weig[1],10),
+       newWeig = 0,
+       weightPrice = 0,
+       FirstMoney = WeightMoney.FirstMoney,
+       NexMoney = WeightMoney.NexMoney;    
+       
+       if (!FirstMoney) FirstMoney = WeightMoney.defaultMoney ;
+       if (!NexMoney) NexMoney = WeightMoney.defaultMoney ;
+       
+
+       if(decimals > WeightMoney.WeightPoint){
+          newWeig = regular + 1;
+       }else{
+          newWeig = bang;
+       }
+       
+       
+       if(newWeig > WeightMoney.FirstWeight){
+         // 大于首磅
+         weightPrice = FirstMoney + (bang-WeightMoney.FirstWeight)*NexMoney;
+       }else{
+         weightPrice = FirstMoney; 
+       }
+       
+       allPrice(weightPrice);
+}
+
+function allPrice(weightPrice){
+     
+     
+    
+}
+
 /*--计算公式--*/
 
 

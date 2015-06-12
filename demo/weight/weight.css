@@ -1,0 +1,57 @@
+body{
+	padding:5px;
+}
+/*运单扫描*/
+.jwg-waybill .w-note{
+	font-weight:bolder;
+	font-size:18px;
+}
+.w-note span{
+   color:#ff6666;
+}
+.jwg-waybill .waybillState{
+    font-weight:bolder;
+	font-size:18px;
+}
+.waybillState .finish{
+	color:#41a903;
+}
+.waybillState .failWait{
+    color:#ff6666;
+}
+/*信息确认*/
+
+/*商品打包*/
+.allWeight{
+	font-size:20px;
+	line-height:64px;
+}
+.allWeight .w-logo{
+	display:block;
+	width:85px;
+	height:64px;
+	float:left;
+}
+.allWeight .w-pound{
+	font-size:35px;
+}
+.allWeight .red{
+    color:#ff6666;
+}
+.weight-table .table th,.weight-table .table td{
+    text-align:center; 
+}
+.weight-table .wNumber input{
+	width:70px;
+	margin:0 auto;
+}
+.weight-operate{
+
+}
+/*--运单价格--*/
+.waybill-price{
+  margin-bottom:20px;
+}
+.waybill-price .form-inline  .price-item{
+  margin-bottom:10px;
+}
