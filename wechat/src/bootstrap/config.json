@@ -82,6 +82,9 @@
     "@btn-danger-bg": "@brand-danger",
     "@btn-danger-border": "darken(@btn-danger-bg, 5%)",
     "@btn-link-disabled-color": "@gray-light",
+    "@btn-border-radius-base": "@border-radius-base",
+    "@btn-border-radius-large": "@border-radius-large",
+    "@btn-border-radius-small": "@border-radius-small",
     "@input-bg": "#fff",
     "@input-bg-disabled": "@gray-lighter",
     "@input-color": "@gray",
@@ -213,6 +216,7 @@
     "@jumbotron-bg": "@gray-lighter",
     "@jumbotron-heading-color": "inherit",
     "@jumbotron-font-size": "ceil((@font-size-base * 1.5))",
+    "@jumbotron-heading-font-size": "ceil((@font-size-base * 4.5))",
     "@state-success-text": "#3c763d",
     "@state-success-bg": "#dff0d8",
     "@state-success-border": "darken(spin(@state-success-bg, -10), 5%)",
@@ -386,32 +390,14 @@
     "responsive-utilities.less",
     "button-groups.less",
     "input-groups.less",
-    "navs.less",
-    "navbar.less",
     "pager.less",
     "labels.less",
     "badges.less",
     "alerts.less",
     "list-group.less",
     "panels.less",
-    "close.less",
-    "dropdowns.less",
-    "tooltip.less",
-    "popovers.less",
-    "modals.less",
-    "carousel.less"
+    "close.less"
   ],
-  "js": [
-    "alert.js",
-    "button.js",
-    "carousel.js",
-    "dropdown.js",
-    "modal.js",
-    "tooltip.js",
-    "popover.js",
-    "tab.js",
-    "collapse.js",
-    "scrollspy.js"
-  ],
-  "customizerUrl": "http://v3.bootcss.com/customize/?id=3a481e99c143fed38ce4"
+  "js": [],
+  "customizerUrl": "http://v3.bootcss.com/customize/?id=e72c19ca603f8d881775"
 }
