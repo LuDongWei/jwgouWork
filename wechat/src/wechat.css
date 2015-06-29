@@ -1,0 +1,39 @@
+body h2{
+	font-size:22px;
+	line-height:40px;
+}
+body h3{
+	font-size:18px;
+}
+header{
+	color:#ffffff;
+	background-color:#337ab7;
+	text-align:center;
+    font-size: 26px;
+    padding:3px 0px;
+}
+.top-up .row{
+    margin-bottom:15px;
+}  
+.await-order-list .await-order-item{
+    border:1px solid #cccccc;
+    margin-bottom:15px;
+    padding:8px;
+    position:relative;
+}
+.await-order-item .goTo{
+    position:absolute;
+    display:block;
+    width:100%;
+    height:100%;
+    top:0px;
+    left:0px;
+}
+.basic-information .basic-item,.commodity-information .commodity-item,.waybill-information .waybill-item{
+	border:1px solid #cccccc;
+    margin-bottom:15px;
+    padding:8px;
+}
+.turn-page{
+    margin-bottom:50px;
+}
