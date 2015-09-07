@@ -1,0 +1,30 @@
+"attributelist": [{
+	"id": "1",
+	"AttributeName": "适应段数",
+	"tag": "2",
+	AttributeValues: [{
+		"AttributeValue": "一阶段",
+		"id": 31
+	}, {
+		"AttributeValue": "二阶段",
+		"id": 32
+	}, {
+		"AttributeValue": "三阶段",
+		"id": 33
+	}]
+}, {, "id": "2",
+	"AttributeName": "保质期",
+	"tag": "1",
+	AttributeValues: [{
+		"AttributeValue": "3个月",
+		"id": 41
+	}, {
+		"AttributeValue": "6个月",
+		"id": 42
+	}, {
+		"AttributeValue": "1年",
+		"id": 43
+	}]
+}]
+
+tag:1代表单选  2代表多选

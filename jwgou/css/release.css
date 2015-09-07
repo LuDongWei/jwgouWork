@@ -1,0 +1,425 @@
+/*--符号--*/ 
+@font-face {
+    font-family: 'iconfont';
+  src: url('http://at.alicdn.com/t/font_1414064817_8720093.eot'); /* IE9*/
+  src: url('http://at.alicdn.com/t/font_1414064817_8720093.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('http://at.alicdn.com/t/font_1414064817_8720093.woff') format('woff'), /* chrome、firefox */
+  url('http://at.alicdn.com/t/font_1414064817_8720093.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+  url('http://at.alicdn.com/t/font_1414064817_8720093.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+    font-family: "iconfont";
+    font-size: 14px;
+    font-style: normal;
+}
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+.clearfix {
+    zoom: 1;
+}
+/*--经纬购-商品发布--*/
+body {
+    background-color: #ffffff;
+    color: #292929;
+}
+
+.jwg-release-page {
+    width: 1028px;
+    border: 1px solid #e2e2e2;
+    text-align: left;
+    font-family: '宋体';
+    font-size: 12px;
+    float: right;
+    margin-top: 19px;
+    padding: 5px 15px;
+}
+/*---头部--*/
+.jwg-head-nav {
+    margin-top: 4px;
+}
+/*--当前位置--*/
+.navigation {
+    float: left;
+    line-height: 22px;
+    margin-right: 10px;
+}
+
+.navigation .nav-list {
+    float: left;
+}
+
+.nav-list ul {
+}
+
+.nav-list ul li {
+    float: left;
+    margin-right: 5px;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+}
+
+.nav-list ul li.first {
+}
+
+.navigation a.return {
+    float: left;
+    border-left: 1px solid #ECD2A8;
+    height: 22px;
+    padding-left: 10px;
+    line-height: 22px;
+    margin-left: 20px;
+}
+
+/*--错误提示--*/
+.Error-reminder {
+    width: 495px;
+    float: left;
+}
+
+.fattetion {
+    border: 1px solid #FAC97A;
+    background-color: #FFFFE5;
+    line-height: 22px;
+    padding: 5px 10px;
+    color: #BF1419;
+}
+
+.ErrorMsgDiv {
+    display: none;
+}
+
+.ErrorMsgDiv dl {
+    width: 600px;
+    margin-top: 10px;
+    border-bottom: 1px solid red;
+}
+
+.ErrorMsgDiv dl dt {
+    background-color: #FEE;
+    border: 1px solid red;
+    background-image: none;
+    color: #BF151A;
+    height: 28px;
+    line-height: 28px;
+    padding: 0 10px;
+}
+
+.ErrorMsgDiv dl dt i {
+    margin-right: 5px;
+}
+
+.ErrorMsgDiv dl dd {
+    line-height: 28px;
+    padding-left: 25px;
+    border-left: 1px solid red;
+    border-right: 1px solid red;
+    color: #BF151A;
+}
+/*--填写信息--*/
+.jwg-release-page .section {
+    border-bottom: 1px solid #ccc;
+    margin-top: 30px;
+    padding-bottom: 20px;
+}
+
+.section .field {
+    margin: 15px 0;
+}
+
+.section h3.title {
+    font: bold 14px/30px "\5b8b\4f53";
+    color: #000;
+    padding: 0 10px;
+}
+
+.section input.text,.section select.change {
+    display: inline-block;
+    vertical-align: middle;
+    height: 26px;
+    line-height: 26px;
+    padding: 0 5px;
+    border: 1px solid #DADADA;
+    box-shadow: 2px 2px 4px #F0F0F0 inset;
+    border-top: 1px solid #bababa;
+}
+
+.section select.change {
+    width: 120px;
+}
+
+.section input.button {
+    display: inline-block;
+    vertical-align: middle;
+    height: 28px;
+    line-height: 28px;
+    line-height: normal;
+    padding: 0 14px;
+}
+
+.section .left {
+    width: 100px;
+    text-align: right;
+    float: left;
+    height: 24px;
+    line-height: 24px;
+}
+
+.section .right {
+    margin-left: 110px;  
+}
+
+.section .node {
+    margin-right: 30px;
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+}
+
+.node .query {
+    font-size: 15px;
+    color: #5588C0;
+    cursor: pointer;
+}
+
+.node .query:hover .tooltip {
+    display: block;
+}
+
+.node .tooltip i {
+    color: #00A6E7;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.node .tooltip {
+    font-size: 12px;
+    color: #292929;
+    display: none;
+    width: 420px;
+    top: -40px;
+    background-color: #E5F5FF;
+    border: 1px solid #C9D5E2;
+    line-height: 24px;
+    padding: 5px 10px;
+    position: absolute;
+}
+
+.section .node .l {
+    margin-right: 10px;
+}
+
+.section .node .l,.section .node .r {
+    display: inline-block;
+    vertical-align: middle;
+}
+/*--商品属性--*/
+.custom .close {
+    cursor: pointer;
+    color: #C0553A;
+}
+
+.custom .verify {
+    display: none;
+    color: #F04D00;
+}
+
+.custom .custom-add {
+    display: block;
+    width: 120px;
+    text-align: center;
+    height: 28px;
+    line-height: 28px;
+    text-decoration: none;
+    border: 1px solid #DADADA;
+}
+
+.custom .right {
+    background-color: #F5F5F5;
+    padding: 8px;
+    border: 1px solid #e2e2e2;
+    width: 550px;
+}
+
+.custom-list li {
+    margin-bottom: 15px;
+}
+
+.section .wide {
+    width: 160px;
+    margin-right: 5px;
+}
+/*---上传图片样式---*/
+.section .upload-img {
+    width: 652px;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.upload-img li {
+    float: left;
+    display: inline;
+    width: 92px;
+    margin: 5px 19px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.upload-img .pic {
+    display: block;
+    border: 1px solid #d4d0d0;
+    width: 90px;
+    height: 90px;
+    text-align: center;
+    line-height: 90px;
+    border: 1px solid #e2e2e2;
+    line-height: 90px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+.upload-img .btn {
+    display: inline-block;
+    height: 23px;
+    text-align: center;
+    background: #e7e7e7;
+    border: 1px solid #ccc;
+    vertical-align: middle;
+    line-height: 23px;
+    padding: 0 10px;
+    cursor: pointer;
+    border-radius: 3px;
+    color: #666;
+}
+
+.upload-img .file {
+    position: absolute;
+    width: 90px;
+    left: 0px;
+    bottom: 0;
+    *width: 250px;
+    *left: -150px;
+    *bottom: -2px;
+    height: 25px;
+    filter: alpha(opacity=0);
+    -moz-opacity: .0;
+    opacity: 0.0;
+    cursor: pointer;
+}
+
+.upload-img .handle {
+    color: #fff;
+    cursor: pointer;
+    height: 20px;
+    background-color: #f04e00;
+    position: absolute;
+    top: 60px;
+    width: 90px;
+    left: 1px;
+    text-align: center;
+    display: none;
+}
+
+.upload-img p {
+    height: 20px;
+    line-height: 20px;
+}
+
+.upload-img ul li:hover {
+}
+
+.upload-img ul li:hover .handle {
+    display: block;
+}
+
+/*--设置规格和报价--*/
+.jwg-standard .close {
+    line-height: 28px;
+    height: 28px;
+    display: inline-block;
+    margin-top: 8px;
+    vertical-align: middle;
+    margin-left: 5px;
+    color: #BF151A;
+    text-decoration: none;
+}
+
+#mainAtablePic {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 25px;
+}
+
+#mainAtablePic thead td {
+    height: 35px;
+}
+
+#mainAtablePic td {
+    border: solid 1px #D7D7D7;
+    text-align: center;
+    height: 35px;
+}
+
+#mainAtablePic thead {
+    background-color: #EDEDED;
+}
+
+#mainAtable {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#mainAtable td {
+    border: solid 1px #D7D7D7;
+    text-align: center;
+    height: 35px;
+    line-height: 35px;
+}
+
+#mainAtable thead {
+    background-color: #EDEDED;
+}
+
+#mainAtable .settings {
+}
+
+#mainAtable .settings:hover {
+    color: #000000;
+    text-decoration: none;
+}
+
+.jwg-standard .AttributeDiv {
+    border: 1px solid #e2e2e2;
+    background-color: #f5f5f5;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+/*--设置备货信息及运费--*/
+.freight .box {
+}
+/*--上架及退货设置--*/
+.rd-container {
+    z-index: 9999;
+}
+/*----完成并发布----*/
+.jwg-sublime .sublime-buttom {
+    margin: 30px auto;
+    padding: 2px 20px 2px 20px;
+    display: block;
+    border: 1px solid #CC3333;
+    border-radius: 6px;
+    line-height: 33px;
+    font-size: 18px;
+    background-color: #FFB000;
+    font-family: '微软雅黑';
+    text-align: center;
+}

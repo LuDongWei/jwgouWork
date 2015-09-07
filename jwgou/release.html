@@ -1,0 +1,802 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1">
+	<meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+
+    <meta content="zh-CN" http-equiv="Content-Language" />
+
+	<link rel="stylesheet" href="http://www.jwgou.com/src_1_3/index.css" />
+	<link rel="stylesheet" href="http://www.jwgou.com/src_1_3/hdbm.css" />
+
+    <script type="text/javascript" src="http://www.jwgou.com/js/comment.js"></script>
+
+    <script src="http://www.jwgou.com/src/libs/jquery/1.8.2/jquery.min.js"></script>
+
+    <script type="text/javascript" src="http://cca.mbaobao.com/static/mod/min/f=seajs/seajs/2.0.0/sea.js,seajs/seajs/2.0.0/plugin-style.js,mbb/config/2.0.2/sea-config.js,arale/events/1.0.0/events.js,gallery/cookie/1.0.2/cookie.js,jquery/jquery/1.7.2/jquery.js?0904"></script>
+
+
+    <script type="text/javascript" src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js"
+        data-appid="101120370" data-redirecturi="http://www.jwgou.com/User/UserLogin.aspx"
+        charset="utf-8"></script>
+
+    
+    
+    <!--编辑器输入-->
+    <script type="text/javascript" src="http://www.jwgou.com/ckeditor/ckeditor.js"></script>
+
+    <!--时间输入-->
+    <link rel="stylesheet" href="./css/rome.min.css" />
+    <script type="text/javascript" src="./js/rome.min.js"></script>
+
+    <!--解决json问题-->
+    <!--[if IE 7]>
+    <script type="text/javascript" src="./js/json2.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" href="./css/release.css" />
+</head>
+
+<body>
+
+ <!-- <form action="http://www.W3CSchool.cn/example/html/form_action.asp" method="get"> -->
+
+<!--设置规格和报价-->
+<input type="hidden" name="jwg$standard" id="jwgHiddenStandard" value="0">
+<!--备货状态-->
+<!-- <input type="hidden" name="jwg$name" id="jwgHiddenName"> -->
+<!--配送方式-->
+<input type="hidden" name="jwg$distribution" id="jwgHiddenDistribution">
+<!--运费设置--> 
+<input type="hidden" name="jwg$freight" id="jwgHiddenFreight">
+<input type="hidden" name="jwg$freightInf" id="jwgHiddenFreightInf">
+<!--商品限购-->
+<input type="hidden" name="jwg$limitation" id="jwgHiddenLimitation">
+<input type="hidden" name="jwg$limitationNumber" id="jwgHiddenLimitationNumber">
+<!--上架时间-->
+<input type="hidden" name="jwg$time" id="jwgHiddenTime">
+<input type="hidden" name="jwg$timeBegin" id="jwgTimeHiddenBegin">
+<input type="hidden" name="jwg$timeEnd" id="jwgHiddenTimeEnd">
+<!--上架设置-->
+<input type="hidden" name="jwg$dotime" id="jwgHiddenDotime">
+<!--退货条件-->
+<input type="hidden" name="jwg$GoReturn" id="jwgHiddenGoReturn">
+
+ 
+
+<!--经纬购-商品发布页面-->
+<div class="jwg-release-page">
+     <div class="contain">
+
+          <div class="jwg-head-nav clearfix" >
+                <!--当前位置-->
+                <div class="navigation clearfix">
+                    <div class="nav-list">
+                        <ul class="clearfix" id="jwgNav">
+                          <li class="first">您当前选择的是：</li>
+                <li><a href="javascript:void(0)">箱包手袋</a> > </li>
+                <li><a href="javascript:void(0)">箱包手袋</a> > </li>
+                <li><a href="javascript:void(0)">箱包手袋</a> > </li> 
+                        </ul>
+                    </div>
+                    <a href="" class="return">修改</a>  
+                </div> 
+
+              <!--错误提示-->
+              <div class="Error-reminder">
+                   <div class="warn">
+                      <span class="fattetion">请如实填写商品信息！如因商品描述不符引起买家投诉，经纬网将按处罚规则进行处罚。</span>
+                   </div> 
+              </div>   
+          </div> 
+
+          <!--验证错误-->
+          <div class="ErrorMsgDiv" id="jwgError">
+                <dl>
+                </dl>
+          </div>
+
+         
+          <!--填写商品信息-->
+          <div class="section first">
+          	   <h3 class="title">1.填写商品基本信息</h3>  
+               <div class="field name clearfix" >
+               	   <div class="left">
+               	   	   <p>商品名称：</p> 
+               	   </div>
+                 
+                   <div class="right" >
+                   	   <input type="text" class="text jwg-name" id="jwgName" name="name"  style="width:390px;"  />
+                       <span class="attetion">（还可输入<strong>60</strong>个字符。）</span> 
+                   </div>
+                    
+               </div>
+
+
+    
+               <div class="field images" id="jwgImages">
+               	   <div class="left">
+               	   	   <p>商品图片：</p> 
+               	   </div> 
+               	   <div class="right">
+                        <div class="upload-img">
+                          <ul class="clearfix" id="PictureUrlBox">
+                            <li>
+                              <a class="pic" id="uploadedPic1">暂无图片</a>
+                              <div class="handle transparent">删除</div>
+                              <form id="formUploadPic1" action="/SellerProduct/UploadPic" method="post" enctype="multipart/form-data">
+                                <div class="btn">上传单张图片</div>
+                                <input type="file" id="PictureUrl1" name="PictureUrl1" class="file">                        
+                                <input type="hidden" id="ProductPictureUrl1"></form>
+                            </li>
+                            <li>
+                              <a class="pic" id="uploadedPic2">暂无图片</a>
+                              <div class="handle transparent">删除</div>
+                              <form id="formUploadPic2" action="/SellerProduct/UploadPic" method="post" enctype="multipart/form-data">
+                                <div class="btn">上传单张图片</div>
+                                <input type="file" id="PictureUrlFile2" name="PictureUrl2" class="file">                        
+                                <input type="hidden" id="ProductPictureUrl2"></form>
+                            </li>
+                            <li>
+                              <a class="pic" id="uploadedPic3">暂无图片</a>
+                              <div class="handle transparent">删除</div>
+                              <form id="formUploadPic3" action="/SellerProduct/UploadPic" method="post" enctype="multipart/form-data">
+                                <div class="btn">上传单张图片</div>
+                                <input type="file" id="PictureUrlFile3" name="PictureUrl3" class="file">                        
+                                <input type="hidden" id="ProductPictureUrl3"></form>
+                            </li>
+                            <li>
+                              <a class="pic" id="uploadedPic4">暂无图片</a>
+                              <div class="handle transparent">删除</div>
+                              <form id="formUploadPic4" action="/SellerProduct/UploadPic" method="post" enctype="multipart/form-data">
+                                <div class="btn">上传单张图片</div>
+                                <input type="file" id="PictureUrlFile4" name="PictureUrl4" class="file">                        
+                                <input type="hidden" id="ProductPictureUrl4"></form>
+                            </li>
+                            <li>
+                              <a class="pic" id="uploadedPic5">暂无图片</a>
+                              <div class="handle transparent">删除</div>
+                              <form id="formUploadPic5" action="/SellerProduct/UploadPic" method="post" enctype="multipart/form-data">
+                                <div class="btn">上传单张图片</div>
+                                <input type="file" id="PictureUrlFile5" name="PictureUrl5" class="file">                        
+                                <input type="hidden" id="ProductPictureUrl5"></form>
+                            </li>
+                          </ul>
+                          <p> 建议您上传的图片尺寸大于320X320；图片文件的大小不超过5MB</p>  
+                          <p> 建议您上传的图片尺寸大于320X320；图片文件的大小不超过5MB</p> 
+                        </div>
+                        <div class="field clearfix">
+                             <input id="uploadImgs" type="button" class="button" value="批量上传商品图片"> <span style="margin-left:8px;">图片最多上传5张</span>
+                        </div> 
+               	   </div>	
+               </div>
+               <div class="field describe" id="jwgDescribe">
+               	   <div class="left">
+               	   	   <p>商品描述：</p> 
+               	   </div> 
+               	   <div class="right">
+
+               	   	     <textarea name="FCKeditor1" id="FCKeditor1"></textarea>
+               	   	     <script type="text/javascript">
+                        //<![CDATA[
+                        CKEDITOR.replace('FCKeditor1',
+				      	{
+				 	    skin: 'kama',
+					    language: 'zh-cn',
+					    height: '500',
+					    extraPlugins: 'myfile',
+					    toolbar:
+		                [
+			                ['Source', '-', 'Save', 'NewPage', 'DocProps', 'Preview', 'Print', '-', 'Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo', '-', 'Find', 'Replace', 'SelectAll', '-', 'Link', 'Unlink'], ['CreateMyfile', 'Table', 'HorizontalRule', '-', 'Smiley', 'SpecialChar', 'PageBreak', '-', 'Maximize', 'ShowBlocks', '-', 'TextColor', 'BGColor'],
+                            '/',
+                            ['Styles', 'Format', 'Font', 'FontSize'],
+                            ['Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-', 'RemoveFormat'],
+                            ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'JustifyLeft',
+'JustifyCenter', 'JustifyRight', 'JustifyBlock']
+		                ]
+					});
+                        //]]>
+                    </script>
+
+               	   </div>	
+               </div>
+          </div>
+
+          <input name="attribute_json" type="hidden" id="attribute_json" value='{"attributelist":[{"attributeNameId":"584","AttributeName":"功效","tag":"2","AttributeValues":[{"AttributeValue":"抗氧化","AttributeValueId":840,"isChecked":false},{"AttributeValue":"提亮肤色","AttributeValueId":841,"isChecked":true},{"AttributeValue":"美白","AttributeValueId":842,"isChecked":true},{"AttributeValue":"补水","AttributeValueId":843,"isChecked":true},{"AttributeValue":"保湿","AttributeValueId":844,"isChecked":true},{"AttributeValue":"淡斑","AttributeValueId":845,"isChecked":false},{"AttributeValue":"抗敏感","AttributeValueId":846,"isChecked":true},{"AttributeValue":"控油","AttributeValueId":847,"isChecked":true},{"AttributeValue":"收缩毛孔","AttributeValueId":848,"isChecked":false},{"AttributeValue":"提拉紧致","AttributeValueId":849,"isChecked":false},{"AttributeValue":"去角质","AttributeValueId":850,"isChecked":false},{"AttributeValue":"去疤/去印","AttributeValueId":851,"isChecked":false},{"AttributeValue":"抗皱","AttributeValueId":852,"isChecked":false},{"AttributeValue":"去黑头","AttributeValueId":853,"isChecked":false},{"AttributeValue":"舒缓/抗敏感","AttributeValueId":854,"isChecked":true},{"AttributeValue":"去红血丝","AttributeValueId":855,"isChecked":false},{"AttributeValue":"深层清洁","AttributeValueId":856,"isChecked":false},{"AttributeValue":"晒后修复","AttributeValueId":858,"isChecked":false},{"AttributeValue":"抗菌消炎","AttributeValueId":859,"isChecked":true},{"AttributeValue":"舒缓肌肤","AttributeValueId":861,"isChecked":false},{"AttributeValue":"滋润","AttributeValueId":865,"isChecked":true},{"AttributeValue":"祛粉刺/祛痘","AttributeValueId":866,"isChecked":false},{"AttributeValue":"净化排毒","AttributeValueId":869,"isChecked":false},{"AttributeValue":"清洁毛孔","AttributeValueId":871,"isChecked":false},{"AttributeValue":"抗衰老/抗皱","AttributeValueId":872,"isChecked":false},{"AttributeValue":"清洁","AttributeValueId":875,"isChecked":false},{"AttributeValue":"卸妆","AttributeValueId":916,"isChecked":false},{"AttributeValue":"消炎镇定","AttributeValueId":917,"isChecked":false},{"AttributeValue":"去眼袋","AttributeValueId":918,"isChecked":false},{"AttributeValue":"消除水肿","AttributeValueId":919,"isChecked":false},{"AttributeValue":"去黑眼圈","AttributeValueId":920,"isChecked":false},{"AttributeValue":"损伤修复","AttributeValueId":921,"isChecked":false},{"AttributeValue":"粉刺/抗痘","AttributeValueId":922,"isChecked":false}]},{"attributeNameId":"618","AttributeName":"化妆品特性","tag":"2","AttributeValues":[{"AttributeValue":"清洁度","AttributeValueId":726,"isChecked":false},{"AttributeValue":"舒适度","AttributeValueId":727,"isChecked":true},{"AttributeValue":"无残留","AttributeValueId":728,"isChecked":true},{"AttributeValue":"温和度","AttributeValueId":729,"isChecked":true},{"AttributeValue":"气味","AttributeValueId":730,"isChecked":false},{"AttributeValue":"使用效果","AttributeValueId":731,"isChecked":false},{"AttributeValue":"吸收度","AttributeValueId":732,"isChecked":true},{"AttributeValue":"清爽度","AttributeValueId":771,"isChecked":true},{"AttributeValue":"防晒效果","AttributeValueId":777,"isChecked":false},{"AttributeValue":"心理疗效","AttributeValueId":780,"isChecked":false},{"AttributeValue":"皮肤","AttributeValueId":781,"isChecked":true},{"AttributeValue":"纯度","AttributeValueId":782,"isChecked":false},{"AttributeValue":"活肤滋润","AttributeValueId":783,"isChecked":true},{"AttributeValue":"舒缓镇定","AttributeValueId":786,"isChecked":false},{"AttributeValue":"洁面粉","AttributeValueId":793,"isChecked":false}]},{"attributeNameId":"619","AttributeName":"适合肤质","tag":"2","AttributeValues":[{"AttributeValue":"干性肤质","AttributeValueId":654,"isChecked":true},{"AttributeValue":"中性肤质","AttributeValueId":657,"isChecked":true},{"AttributeValue":"油性肤质","AttributeValueId":658,"isChecked":true},{"AttributeValue":"混合型肤质","AttributeValueId":659,"isChecked":false},{"AttributeValue":"油性及混合性肤质","AttributeValueId":661,"isChecked":false},{"AttributeValue":"中性及干性肤质","AttributeValueId":666,"isChecked":false},{"AttributeValue":"敏感性肤质","AttributeValueId":671,"isChecked":false},{"AttributeValue":"油、干、中性肌肤","AttributeValueId":672,"isChecked":false},{"AttributeValue":"中性及油性肤质","AttributeValueId":715,"isChecked":false},{"AttributeValue":"中性、混合性肤质","AttributeValueId":720,"isChecked":false},{"AttributeValue":"所有肤质","AttributeValueId":725,"isChecked":true}]},{"attributeNameId":"626","AttributeName":"化妆品容量","tag":"1","AttributeValues":[{"AttributeValue":"5ml","AttributeValueId":799,"isChecked":false},{"AttributeValue":"10ml","AttributeValueId":800,"isChecked":false},{"AttributeValue":"15ml","AttributeValueId":801,"isChecked":false},{"AttributeValue":"20ml","AttributeValueId":804,"isChecked":false},{"AttributeValue":"25ml","AttributeValueId":807,"isChecked":false},{"AttributeValue":"30ml","AttributeValueId":809,"isChecked":false},{"AttributeValue":"40ml","AttributeValueId":810,"isChecked":false},{"AttributeValue":"50ml","AttributeValueId":811,"isChecked":false},{"AttributeValue":"60ml","AttributeValueId":812,"isChecked":false},{"AttributeValue":"80ml","AttributeValueId":813,"isChecked":false},{"AttributeValue":"100ml","AttributeValueId":814,"isChecked":false},{"AttributeValue":"110ml","AttributeValueId":815,"isChecked":false},{"AttributeValue":"125ml","AttributeValueId":816,"isChecked":false},{"AttributeValue":"150ml","AttributeValueId":818,"isChecked":false},{"AttributeValue":"160ml","AttributeValueId":819,"isChecked":false},{"AttributeValue":"180ml","AttributeValueId":820,"isChecked":false},{"AttributeValue":"200ml","AttributeValueId":821,"isChecked":false},{"AttributeValue":"220ml","AttributeValueId":822,"isChecked":false},{"AttributeValue":"225ml","AttributeValueId":823,"isChecked":false},{"AttributeValue":"235ml","AttributeValueId":824,"isChecked":false},{"AttributeValue":"250ml","AttributeValueId":825,"isChecked":false},{"AttributeValue":"280ml","AttributeValueId":826,"isChecked":false},{"AttributeValue":"300ml","AttributeValueId":827,"isChecked":false},{"AttributeValue":"400ml","AttributeValueId":828,"isChecked":false},{"AttributeValue":"450ml","AttributeValueId":829,"isChecked":false},{"AttributeValue":"500ml","AttributeValueId":830,"isChecked":false},{"AttributeValue":"600ml","AttributeValueId":831,"isChecked":false},{"AttributeValue":"800ml","AttributeValueId":832,"isChecked":false},{"AttributeValue":"1000ml","AttributeValueId":833,"isChecked":false},{"AttributeValue":"其他容量","AttributeValueId":834,"isChecked":true}]},{"attributeNameId":"629","AttributeName":"规格","tag":"1","AttributeValues":[{"AttributeValue":"正常规格","AttributeValueId":835,"isChecked":true},{"AttributeValue":"中样","AttributeValueId":836,"isChecked":false},{"AttributeValue":"小样","AttributeValueId":837,"isChecked":false},{"AttributeValue":"礼包/礼盒","AttributeValueId":838,"isChecked":false},{"AttributeValue":"其他规格","AttributeValueId":839,"isChecked":false}]},{"attributeNameId":"635","AttributeName":"来自国家","tag":"1","AttributeValues":[{"AttributeValue":"美国","AttributeValueId":923,"isChecked":true},{"AttributeValue":"加拿大","AttributeValueId":924,"isChecked":false},{"AttributeValue":"欧洲","AttributeValueId":925,"isChecked":false},{"AttributeValue":"日本","AttributeValueId":926,"isChecked":false},{"AttributeValue":"韩国","AttributeValueId":927,"isChecked":false},{"AttributeValue":"其他国家","AttributeValueId":928,"isChecked":false}]},{"attributeNameId":"636","AttributeName":"保质期","tag":"1","AttributeValues":[{"AttributeValue":"3个月","AttributeValueId":929,"isChecked":false},{"AttributeValue":"6个月","AttributeValueId":930,"isChecked":false},{"AttributeValue":"12个月","AttributeValueId":931,"isChecked":false},{"AttributeValue":"2年","AttributeValueId":932,"isChecked":false},{"AttributeValue":"3年","AttributeValueId":933,"isChecked":true},{"AttributeValue":"5年","AttributeValueId":934,"isChecked":false},{"AttributeValue":"无","AttributeValueId":935,"isChecked":false}]}]}'>
+
+          <input name="isAttribute_json" type="hidden" id="isAttribute_json" value="0" > 
+
+          <input name="meAttribute_json" type="hidden" id="meAttribute_json" value='[{"attributeNameId_":0,"AttributeName_":"sssss","pro_":[{"AttributeValueId_":"0","AttributeValue_":"dddd"}]},{"attributeNameId_":0,"AttributeName_":"ss","pro_":[{"AttributeValueId_":"0","AttributeValue_":"ddd"}]},{"attributeNameId_":0,"AttributeName_":"ddd","pro_":[{"AttributeValueId_":"0","AttributeValue_":"sss"}]}]'>
+
+          <input name="isMeAttribute_json" type="hidden" id="isMeAttribute_json" value="0" >
+          
+          <input type="hidden" name="sysAtuHd" id="sysAtuHd" value="" />                      
+          <input type="hidden" name="sysAtuHd" id="meAtuHd" value="" /> 
+
+          <!--商品属性-->
+          <div class="section second">
+               <h3 class="title">2.设置商品属性</h3> 
+               <p class="fattetion">
+                  友情提醒：合理设定商品规格可减少与用户的沟通成本，请根据实际需求启用商品规格！（如：有黑色毛衣大码和黑色毛衣中码两件商品，规格设为”中码”和”大码”即可。最多启用2个规格。）
+               </p>
+                <div  id="proFixed">            
+                </div>
+                <p class="fattetion" style="margin-left: 110px;width: 415px;">
+                         友情提醒：合理设定商品规格可减少与用户的沟通成本，
+                </p>
+                <div class="custom field clearfix" >
+                  <div class="left">自定义属性：
+                  </div>
+                  <div class="right" id="proCustom">
+                    <ul class="custom-list" id="customList">
+                      <li>
+                        <div class="node jwgKeyValue clearfix" data-integrity="false">
+                          <input type="text" class="text jwg-key" name="key" value="属性名称"  id="customKey01" data-value="属性名称" >                
+                          <input type="text" class="text jwg-value" name="value" value="属性内容" id="customValue01" data-value="属性内容" >
+                          <i class="iconfont close">&#xe600;</i>
+                          <span class="verify"><span>属性内容</span>不为空</span>
+                        </div>
+                      </li>
+                    </ul>
+                    <a href="javascript:void(0)" class="custom-add" id="customAdd" >+ 增加属性内容</a>
+                  </div>
+                </div>
+                <p class="fattetion" style="margin-left: 110px;width: 415px;">
+                         友情提醒：合理设定商品规格可减少与用户的沟通成本，
+                </p>   
+
+          </div>  
+          <!--商品属性-->
+
+          <!--设置规格和报价以及库存-->
+          <div class="section thirdly">
+          	   <h3 class="title">3.设置规格和报价</h3> 
+          	   <p class="fattetion">
+          	   	  友情提醒：合理设定商品规格可减少与用户的沟通成本，请根据实际需求启用商品规格！（如：有黑色毛衣大码和黑色毛衣中码两件商品，规格设为”中码”和”大码”即可。最多启用2个规格。）
+          	   </p> 
+               <div class="field" >
+                      <!--表格信息记录保存--> 
+                      <input type="hidden" name="Attribute1$HiddenField1" id="Attribute1_HiddenField1" />                      
+                      <input type="hidden" name="Attribute1$HiddenField2" id="Attribute1_HiddenField2" />                      
+                      <input type="hidden" name="Attribute1$HiddenField3" id="Attribute1_HiddenField3" />                      
+                      <input type="hidden" name="Attribute1$HiddenField4" id="Attribute1_HiddenField4" />                      
+                      <input type="hidden" name="Attribute1$HiddenField5" id="Attribute1_HiddenField5" />                      
+                      <input type="hidden" name="Attribute1$HiddenFieldValue" id="Attribute1_HiddenFieldValue" />                      
+                      <input type="hidden" name="Attribute1$HiddenFieldKc" id="Attribute1_HiddenFieldKc" />                      
+                      <input type="hidden" name="Attribute1$HiddenFieldImgStr" id="Attribute1_HiddenFieldImgStr" />                      
+                      <input type="hidden" name="Attribute1$HiddenFieldContrast1" id="Attribute1_HiddenFieldContrast1" />                      
+                      <input type="hidden" name="Attribute1$HiddenFieldContrast2" id="Attribute1_HiddenFieldContrast2" />                      
+                      <input type="hidden" name="Attribute1$HiddenFieldContrast3" id="Attribute1_HiddenFieldContrast3" />                      
+                      <input type="hidden" name="Attribute1$HiddenFieldContrast4" id="Attribute1_HiddenFieldContrast4" />                      
+                      <input type="hidden" name="Attribute1$HiddenFieldContrast5" id="Attribute1_HiddenFieldContrast5" />                      
+                      <input type="hidden" name="Attribute1$HiddenFieldValueContrast" id="Attribute1_HiddenFieldValueContrast" />                      
+                      <input type="hidden" name="Attribute1$HiddenFieldKcContrast" id="Attribute1_HiddenFieldKcContrast" />                      
+                      <input type="hidden" name="Attribute1$HiddenFieldImgStrContrast" id="Attribute1_HiddenFieldImgStrContrast" />   
+                    
+                      <!--设计价格弹框-->                      
+                      <div id="DivAttributePrice" style="z-index: 0; position: fixed; width: 200px; top: 50%;
+    left: 50%; margin: -100px 0 0 -130px; background-color: White; display: none">
+                        <table style="width: 100%; background-color: White; border: solid 5px gray;">
+                          <tr>
+                            <td align="right" style="width: 60px">价格：&nbsp;</td>
+                            <td align="left">
+                              <input id="txtPrice" type="text" style="width: 100px" />                      
+                            </td>
+                          </tr>
+                          <tr>
+                            <td colspan="2" align="center">
+                              <input type="button" value="设置" class="btn" onclick="SheZhiPrice()" />                      
+                            </td>
+                          </tr>
+                        </table>
+                      </div>
+                      <div id="DivAttributeYPrice" style="z-index: 0; position: fixed; width: 200px; top: 50%;
+    left: 50%; margin: -100px 0 0 -130px; background-color: White; display: none">
+                        <table style="width: 100%; background-color: White; border: solid 5px gray;">
+                          <tr>
+                            <td align="right" style="width: 60px">原价：&nbsp;</td>
+                            <td align="left">
+                              <input id="txtYPrice" type="text" style="width: 100px" />                      
+                            </td>
+                          </tr>
+                          <tr>
+                            <td colspan="2" align="center">
+                              <input type="button" value="设置" class="btn" onclick="SheZhiYPrice()" />                      
+                            </td>
+                          </tr>
+                        </table>
+                      </div>
+                      <!--设计价格弹框--> 
+
+                      
+                      <!--是否设置规格--> 
+                      <div class="field standard clearfix">
+                        <div class="left">
+                          <p>设置规格：</p>
+                        </div>
+                        <div class="right">
+                          <span class="node">
+                            <input type="radio" name="jwg-standard" value="0" onChange="saveChange(this,'#jwgHiddenStandard')" checked  class="l" id="jwgStandard01">                      
+                            <label class="r" for="jwgStandard01">该商品不设规格</label>
+                          </span>
+                          <span class="node">
+                            <input type="radio" name="jwg-standard" value="1" onChange="saveChange(this,'#jwgHiddenStandard')"   class="l" id="jwgStandard02">                      
+                            <label class="r" for="jwgStandard02">设置商品规格</label>
+                          </span>
+                        </div>
+                      </div>
+                      <!--是否设置规格-->
+
+                      <div class="field standard-add clearfix" id="standardAdd" style="margin-left: 110px;display:none"> 
+                        <!--内容填写-->
+                        <font id="AttributeHtml" class="jwg-standard">
+                          
+                        </font>
+                        <!--内容填写-->
+
+                        <!--规格设置框-->                     
+                        <input id="txtAttribute" type="text" class="text" onkeyup="noSymbol(this)" />
+                        <input id="AddAttribute" type="button" class="button" value="添加规格" />
+                        <input id="btnEmpty" type="button" class="button" value="清空" />
+                        <!--规格设置框-->
+                      </div>
+
+                      <ul class="standard-list" id="standardIist">
+                        <li>
+                          <div class="litClassACss">
+                            <div id="havepicA">
+                              <table id='mainAtablePic'></table> <font id='fileinput'></font>
+                              <table id='mainAtable'></table>
+                            </div>
+                          </div>
+
+                          <div class="clear"></div>
+                          <div id="havepicA"></div>
+                          <div class="clear"></div>
+
+                          <div style="padding-left: 60px; ">
+                            <div class="litcss" id="litMainAdiv"></div>
+                          </div>
+
+                          <div class="tiserr"> <font id="AttrFont" class=" yzfont "></font>
+                          </div>
+
+                        </li>
+
+                        <input name="Protext" type="text" id="Protext" style="display: none;" />                      
+                        <input id="findthis" type="text" style="display: none;" />                      
+                      </ul>
+
+                      <div class="jwg-standard-inf">
+                       <div id="PriceKc">
+                           <div class="field original-price">
+                                <div class="left">
+                                     原价：
+                                </div>
+                                <div class="right">
+                                     <input name="Price"  type="text" id="Price" class="text" style="width: 300px" onblur="Priceval(this);" onkeyup="Priceval(this);if(isNaN(value))execCommand('undo')" onafterpaste="Priceval(this);if(isNaN(value))execCommand('undo')"  onkeypress="Priceval(this)" />
+                                </div>
+                           </div> 
+                           <div class="field current-price">
+                                <div class="left">
+                                     现价：
+                                </div>
+                                <div class="right">
+                                      <input name="NPrice" type="text" id="NPrice" class="text"
+                                      style="width: 300px" onblur=" Priceval(this);" onkeyup="Priceval(this);if(isNaN(value))execCommand('undo')" onafterpaste="Priceval(this);if(isNaN(value))execCommand('undo')"  />   
+                                </div>
+                           </div>
+                            <div class="field">
+                              <div class="left">
+                                   商品条形码：
+                              </div>
+                              <div class="right">
+                                   <input name="txtSkuNum" type="text" id="txtSkuNum" class="text "  style="width: 120px;" onkeyup='noSymbol(this)' />          
+                              </div>
+                           </div>  
+                      </div>
+
+                      <div class="standard-inf">
+                           <div class="field">
+                              <div class="left">
+                                   商品库存：
+                              </div>
+                              <div class="right">
+                                    <input name="Fkc" type="text" id="Fkc" class="text"  onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" style="width: 120px;" />            
+                              </div>
+                           </div> 
+                          
+                             <div class="field">
+                              <div class="left">
+                                   商品重量(克)：
+                              </div>
+                              <div class="right">
+                                     <input name="txtWeight" type="text" id="txtWeight" class="text" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" style="width: 120px;" />                       
+                              </div>
+                           </div>  
+
+                        </div>  
+                      </div> 	     
+               </div>
+          </div>
+          
+          <!--设置备货信息及运费-->
+          <div class="section fourthly">
+          	   <h3 class="title">4.设置备货信息及运费</h3>  
+          	   <p class="fattetion">
+          	   	  友情提醒：合理设定商品规格可减少与用户的沟通成本，请根据实际需求启用商品规格！（如：有黑色毛衣大码和黑色毛衣中码两件商品，规格设为”中码”和”大码”即可。最多启用2个规格。）
+          	   </p>  
+             <!--    <div class="field status clearfix">
+               	    <div class="left">
+               	    	<p>备货状态：</p>
+               	    </div>
+               	    <div class="right">
+               	    	<span class="node">
+               	    		<input type="radio" name="jwg-status" value="0" onChange="saveChange(this,'#jwgHiddenName')"  class="l" id="jwgStatus01"><label class="r" for="jwgStatus01">现货商品</label>
+               	    	</span>
+               	    	<span class="node">
+               	    		<input type="radio" name="jwg-status" value="1" onChange="saveChange(this,'#jwgHiddenName')" class="l" id="jwgStatus02"><label class="r" for="jwgStatus02">代购商品</label> 
+               	    	</span>
+               	    </div>
+               </div>  -->
+               <div class="field transport clearfix">
+               	    <div class="left">
+               	    	<p>配送方式：</p>
+               	    </div>
+               	    <div class="right">
+               	    	<span class="node">
+               	    		<input type="radio" name="jwg-transport" value="0" onChange="saveChange(this,'#jwgHiddenDistribution')" class="l" id="jwgTransport01"><label class="r" for="jwgTransport01">护航直邮</label>
+               	    		<span class="iconfont query">&#xe601;  
+	               	    		<div class="tooltip">
+	               	    			 <p><i class="iconfont">&#xe602;</i>委托洋码头官方国际物流进行商品配送。</p> 
+	               	    		</div>
+               	    	    </span>               	    		
+               	    	</span>
+               	    	<span class="node">
+               	    		<input type="radio" name="jwg-transport" value="1" onChange="saveChange(this,'#jwgHiddenDistribution')" class="l" id="jwgTransport02"><label class="r" for="jwgTransport02">海外直邮</label>
+               	    		<span class="iconfont query">&#xe601;
+                                  <div class="tooltip">
+               	    			     <p><i class="iconfont">&#xe602;</i>由自选国际物流公司，将商品从海外直接送达到买家手中的配送方式。</p> 
+               	    		     </div>
+               	    		</span>               	    	    
+               	    	</span>
+               	    	<span class="node">
+               	    		<input type="radio" name="jwg-transport" value="2" onChange="saveChange(this,'#jwgHiddenDistribution')" class="l" id="jwgTransport03"><label class="r" for="jwgTransport03">国内现货</label>
+               	    		<span class="iconfont query">&#xe601;
+                                <div class="tooltip">
+               	    			 <p><i class="iconfont">&#xe602;</i>先从海外将商品运抵中国，然后再由国内工作人通过国内快递进行配送。</p> 
+               	    		    </div>
+               	    		</span>              	    	
+               	    	</span>
+               	    </div>
+               </div> 
+               <div class="field freight  clearfix">
+               	    <div class="left">
+               	    	<p>运费设置：</p>
+               	    </div>
+               	    <div class="right">
+               	    	 <div class="node">
+               	    	 	 <input type="radio" name="jwg-freight " value="0" onChange="saveChange(this,'#jwgHiddenFreight')" class="l" id="jwgFreight01"><label class="r" for="jwgFreight01">卖家承担运费</label>
+               	    	 </div> 
+               	    	 <div class="node">
+               	    	 	 <input type="radio" name="jwg-freight " value="1" onChange="saveChange(this,'#jwgHiddenFreight')" class="l" id="jwgFreight02"><label class="r" for="jwgFreight02">买家承担运费</label>
+               	    	 </div> 
+               	    	 <div class="box clearfix">
+               	    	 	  <div class="one-freight field clearfix">
+               	    	 	  	 <div class="left">
+               	    	 	  	    单件运费：
+               	    	 	     </div>
+               	    	 	     <div class="right">
+               	    	 	       <input name="freightOnly" type="text" class="text" onChange="saveChange(this,'#jwgHiddenFreightInf')" onblur="Priceval(this);" id="freightOnly" disabled >	
+               	    	 	       <span class="tishifont">*必须输入数字 </span>
+               	    	 	     </div>
+               	    	 	  </div>
+               	    	 	  <div class="many-freight field clearfix">
+               	    	 	  	 <div class="left">
+               	    	 	  	    续件加费：
+               	    	 	     </div>
+               	    	 	     <div class="right">
+               	    	 	        <input name="freightMany" type="text" class="text" onChange="saveChange(this,'#jwgHiddenFreightInf')" onblur="Priceval(this);" id="freightMany" disabled >	
+               	    	 	        <span  class="tishifont">*必须输入数字 </span>
+               	    	 	     </div>
+               	    	 	  </div>
+               	    	 	  <div class="merger-freight field clearfix">
+               	    	 	  	   <div class="left">
+               	    	 	  	    是否合并：
+               	    	 	        </div>
+               	    	 	        <div class="node">
+               	    	 	        	 <input type="checkbox" class="l" id="freightMerger" onChange="saveChange(this,'#jwgHiddenFreightInf')" disabled><label class="r" for="freightMerger" >启用限购</label>
+               	    	 	        	 <span  class="tishifont">（合并后客户订单中选取运费最高费用）</span>
+               	    	 	        </div>	
+               	    	 	  </div>
+               	    	 </div> 	 
+               	    </div>
+               </div> 
+          </div>  
+
+          <!--设置限购-->
+          <div class="section fifth">
+          	  <h3 class="title">5.商品限购</h3>   
+          	  <div class="status clearfix">
+               	    <div class="left">
+               	    	<p>限购设置：</p>
+               	    </div>
+               	    <div class="right">
+               	    	 <div class="LimitStart node clearfix">   	 
+               	    	 	<input type="checkbox" class="l" id="jwgLimitation" onChange="saveChange(this,'#jwgHiddenLimitation')"><label for="jwgLimitation" class="r">启用限购</label>
+               	    	</div>
+                      <div class="LimitNumber">
+                        	 <p>限购<input name="jwgLimitationNumber" type="text" class="text" onChange="saveChange(this,'#jwgHiddenLimitationNumber')" onkeyup="Priceval(this);" id="jwgLimitationNumber"  style="width:30px;" disabled  >件</p>
+                      </div>
+               	    </div>
+              </div> 
+          </div>  
+
+          <!--上架及退货设置-->
+          <div class="section sixth">
+          	  <h3 class="title">6.上架及退货设置</h3>  
+          	    <div class="field time clearfix">
+	                <div class="left">
+	               	    	<p>上架时间：</p>
+	               	</div>
+	                <div class="right">
+	                	<div class="field">
+	                		<span class="node">
+	           	    		   <input type="radio" name="jwg-time" onChange="saveChange(this,'#jwgHiddenTime')" value="0" class="l" id="jwgTime01"><label class="r" for="jwgTime01">立即上架</label> 
+	           	    		   <span class="fattetion">商品有效期为7天。</span>       	    		
+	           	    	    </span> 
+	                	</div>
+	                	<div class="field">
+	                		<span class="node">
+	           	    		   <input type="radio" name="jwg-time" onChange="saveChange(this,'#jwgHiddenTime')" value="1" class="l" id="jwgTime02"><label class="r" for="jwgTime02">定时上架</label>        	    		
+	           	    	    </span> 
+	           	    	    <span class="node">
+	           	    	    	<label class="r" for="timeBegin">起始：</label>    <input id='timeBegin' class='text' type="text" onBlur="saveChange(this,'#jwgTimeHiddenBegin')">
+	           	    	    </span> 
+	           	    	    <span class="node">
+	           	    	    	<label class="r" for="timeEnd">下架：</label>    <input id='timeEnd' class='text' type="text" onBlur="saveChange(this,'#jwgHiddenTimeEnd')">
+	           	    	    </span> 
+	                	</div>
+	                	<div class="field">
+	                		<span class="node">
+	           	    		   <input type="radio" name="jwg-time" onChange="saveChange(this,'#jwgHiddenTime')" value="2" class="l" id="jwgTime03"><label class="r" for="jwgTime03">发布但不上架</label>        	    		
+	           	    	    </span> 
+	                	</div>
+	               </div>
+               </div>
+               <div class="field dotime clearfix">
+	               <div class="left">
+	               	    	<p>上架设置：</p>
+	               	</div>
+	                <div class="right">
+	           	    	<span class="node">
+	           	    		<input type="checkbox" name="jwg-doTime" value="0" onChange="saveChange(this,'#jwgHiddenDotime')" class="l" id="jwgDoTime"><label class="r" for="jwgDoTime">设为自动上架商品</label>
+	           	    	    <span class="fattetion">自动上架的商品，每天登录后会自动延长商品有效期。</span>         	    		
+	           	    	</span> 
+	               </div>
+               </div>
+               <div class="field goReturn clearfix">
+	               <div class="left">
+	               	    	<p>退货条件：</p>
+	               	</div>
+	                <div class="right">
+	           	    	<div class="field">
+	                		<span class="node">
+	           	    		   <input type="radio" name="jwg-goReturn" value="0" onChange="saveChange(this,'#jwgHiddenGoReturn')" class="l" id="jwgGoReturn01"><label class="r" for="jwgGoReturn01">有条件退货</label> 
+	           	    		   <span class="fattetion"><a href="" class="iconfont">&#xe601;  </a>了解退货原则</span>     	    		
+	           	    	    </span> 
+	                	</div>
+	                	<div class="field">
+	                		<span class="node">
+	           	    		   <input type="radio" name="jwg-goReturn" value="1" onChange="saveChange(this,'#jwgHiddenGoReturn')" class="l" id="jwgGoReturn02"><label class="r" for="jwgGoReturn02">可以退货</label>        	    		
+	           	    	    </span> 
+	                	</div>
+	               </div>
+               </div>
+          </div> 
+
+          <!--完成并发布--> 
+          <div class="jwg-sublime">
+              <input type="button"  class="sublime-buttom" name="btnSupply" value="完成并发布商品"  id="jwgSublime" class="btn">
+          </div>	
+
+     </div> 
+</div>
+
+<!-- </form>       -->
+
+
+
+<!--handlebars-单选|多选-->
+<script id="goods-template-1" type="text/x-handlebars-template">
+{{#goods}}
+   <div class="field clearfix">
+     <div class="left">{{AttributeName}}</div>
+       {{#if single}}
+        <div class="right" data-id='{{attributeNameId}}' data-tag='{{tag}}' data-value='{{AttributeName}}'> 
+          <span class="node clearfix">
+             <select id="sel_{{attributeNameId}}" class="change"  >
+               {{#AttributeValues}}
+                  {{#if isChecked}}
+                      <option selected  value="{{AttributeValueId}}">{{AttributeValue}}</option>
+                  {{else}}
+                       <option  value="{{AttributeValueId}}">{{AttributeValue}}</option>
+                  {{/if}}
+               {{/AttributeValues}}
+             </select>
+         </span>
+       </div> 
+       {{else}}
+       <div class="right" data-id='{{attributeNameId}}'  data-tag='{{tag}}' data-value='{{AttributeName}}'>
+          {{#AttributeValues}}
+          <span class="node wide clearfix">
+              {{#if isChecked}}
+                     <input type="checkbox" checked  name="mCheckbox" value="{{AttributeValueId}}" class="l" id="proFixed_{{AttributeValueId}}" data-value='{{AttributeValue}}'> 
+              {{else}}
+                     <input type="checkbox"  name="mCheckbox"   value="{{AttributeValueId}}" class="l" id="proFixed_{{AttributeValueId}}" data-value='{{AttributeValue}}'> 
+              {{/if}}
+              <label for="proFixed_{{AttributeValueId}}" class="r">{{AttributeValue}}</label>
+          </span>
+          {{/AttributeValues}}
+         
+       </div>   
+       {{/if}}
+   </div>
+{{/goods}}
+</script>
+
+<!--handlebars-自定义属性-->
+<script id="goods-template-2" type="text/x-handlebars-template">
+{{#meGoods}}
+ <li>
+  <div class="node jwgKeyValue clearfix" data-integrity="false">
+    <input type="text" class="text jwg-key" name="key" value="{{AttributeName_}}"  id="customKey01" data-value="属性名称" onkeyup="noSymbol(this)" > 
+    {{#pro_}} 
+    <input type="text" class="text jwg-value" name="value" value="{{AttributeValue_}}" id="customValue01" data-value="属性内容" onkeyup="noSymbol(this)" >
+    {{/pro_}}
+    <i class="iconfont close">&#xe600;</i>
+    <span class="verify"><span>属性内容</span>不为空</span>
+  </div>
+ </li>
+{{/meGoods}} 
+</script>
+
+
+<!--时钟-->
+<script type="text/javascript">
+rome(timeBegin);
+rome(timeEnd);
+</script>
+
+<script type="text/javascript">
+//数据隐藏值保存
+function saveChange(this_,hiddle){
+
+   var standardAdd=$("#standardAdd"), 
+       freightOnly=$("#freightOnly"),
+       freightMany=$("#freightMany"),
+       freightMerger=$("#freightMerger"),
+       jwgLimitationNumber=$("#jwgLimitationNumber"),
+       jwgTime01=$("#jwgTime01"),
+       jwgTime02=$("#jwgTime02"),
+       jwgTime03=$("#jwgTime03");
+
+   //设置规格
+   if (hiddle==='#jwgHiddenStandard'){
+      if ($(this_).val()==0){
+         $("#standardAdd").hide();
+         $("#standardIist").hide();
+
+         $("#PriceKc").show(); 
+         $("#Fkc").attr('disabled',false);
+      }else{
+         $("#standardAdd").show();
+         $("#standardIist").show(); 
+         
+         $("#PriceKc").hide(); 
+         $("#Fkc").attr('disabled',true);
+      } 
+   };     
+   
+   //卖加或卖家承担运费
+   if (hiddle==='#jwgHiddenFreight'){
+      if ($(this_).val()==0){
+         freightOnly.attr('disabled',true);
+         freightMany.attr('disabled',true);
+         freightMerger.attr('disabled',true);
+      }else{
+         freightOnly.attr('disabled',false);
+         freightMany.attr('disabled',false);
+         freightMerger.attr('disabled',false);      
+      }; 
+   };
+
+   if(hiddle==='#jwgHiddenFreightInf'){
+     $(hiddle).val(freightOnly.val()+"|"+freightMany.val()+"|"+freightMerger.is(':checked'));
+     return false
+   }
+
+   //商品限购
+   if (hiddle==='#jwgHiddenLimitation'){
+       if($(this_).is(':checked')){
+           jwgLimitationNumber.attr('disabled',false);        
+       }else{
+           jwgLimitationNumber.attr('disabled',true);      
+       }
+   };
+
+  //设置为自动
+  if(hiddle==="#jwgHiddenDotime"){
+    if($(this_).is(':checked')){
+       jwgTime01.click();
+       jwgTime02.attr('disabled',true);
+       jwgTime03.attr('disabled',true);
+    }else{
+       jwgTime02.attr('disabled',false);
+       jwgTime03.attr('disabled',false);
+    }
+  }
+  
+
+   if($(this_).attr("type")=='checkbox' ){
+        $(hiddle).val($(this_).is(':checked'));
+   }else{
+        $(hiddle).val($(this_).val());
+   };  
+    
+}  
+
+//汉字 英文字母 数字 下划线组成
+function noSymbol(obj){
+
+    if(obj.value==''){
+         obj.value='';
+    }else if(!obj.value.match( /^[\u4e00-\u9fa5a-zA-Z0-9]+$/)){
+         obj.value =obj.t_value;   
+    }else{
+         obj.t_value=obj.value;
+    } 
+    if (obj.value == 'undefined') {
+        obj.value = '';
+    }
+
+}
+
+//英文字母 数字
+function noCoding(obj){
+   
+    if(obj.value==''){
+         obj.value='';
+    }else if(!obj.value.match( /^[A-Za-z0-9]+$/)){
+         obj.value =obj.t_value;   
+    }else{
+         obj.t_value=obj.value;
+    } 
+    if (obj.value == 'undefined') {
+        obj.value = '';
+    }
+   
+}
+
+</script>
+
+
+<script type="text/javascript">
+   console.log(CKEDITOR)
+
+
+
+        var Content = CKEDITOR.instances.FCKeditor1.getData();
+        console.log(Content)   
+</script>
+
+<!--规格和报价-->
+<script src="./js/Attribute.js" type="text/javascript"></script>
+
+<!--获取页面信息提交-->
+<script type="text/javascript">
+seajs.use("./js/release.js"); 
+</script>
+
+
+</body>
+</html>

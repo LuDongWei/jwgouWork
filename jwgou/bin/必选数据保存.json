@@ -1,0 +1,58 @@
+[{
+	"attributeNameId_": 1,
+	"AttributeName_": "适应段数",
+	"pro_": [{
+		"AttributeValueId_": "33",
+		"AttributeValue_": "三阶段"
+	}, {
+		"AttributeValueId_": "33",
+		"AttributeValue_": "三阶段"
+	}]
+}, {
+	"attributeNameId_": 2,
+	"AttributeName_": "保质期",
+	"pro_": [{
+		"AttributeValueId_": "1",
+		"AttributeValue_": "6个月"
+	}]
+}, {
+	"attributeNameId_": 3,
+	"AttributeName_": "保质期",
+	"pro_": [{
+		"AttributeValueId_": "43",
+		"AttributeValue_": "1年"
+	}, {
+		"AttributeValueId_": "43",
+		"AttributeValue_": "1年"
+	}]
+}]
+
+[{
+	"attributeNameId_": 0,
+	"AttributeName_": "11",
+	"pro_": [{
+		"AttributeValueId_": "0",
+		"AttributeValue_": "23"
+	}]
+}, {
+	"attributeNameId_": 0,
+	"AttributeName_": "11",
+	"pro_": [{
+		"AttributeValueId_": "0",
+		"AttributeValue_": "23"
+	}]
+}, {
+	"attributeNameId_": 0,
+	"AttributeName_": "",
+	"pro_": [{
+		"AttributeValueId_": "0",
+		"AttributeValue_": ""
+	}]
+}, {
+	"attributeNameId_": 0,
+	"AttributeName_": "3333",
+	"pro_": [{
+		"AttributeValueId_": "0",
+		"AttributeValue_": "444"
+	}]
+}]

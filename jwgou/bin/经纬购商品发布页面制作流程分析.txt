@@ -1,0 +1,52 @@
+jwp-release
+
+##页面部分
+
+###当前位置
+当前位置   jwgNav
+
+###错误提示
+错误提示显示 jwgError
+
+
+###填写商品基本信息
+商品名称：计算可以输入的字符数（限制60个） jwgName
+
+商品属性：固定的属性(proFixed) jwgProperties
+           
+          自定义属性(proCustom) 
+               customKey
+               customValue
+
+商品图片上传：使用原来的flash插件    jwgImages
+
+商品描述：使用原来的插件   jwgDescribe
+
+
+###设置规格和报价
+商品属性：一个属性--多个值   jwg-good-key    jwg-good-value
+          可以一个带多个
+
+
+jwg-standard          
+
+
+###设置备货信息及运费
+备货状态：   jwgStatus
+配送方式：   jwgTransport
+运费设置：   jwgFreight 
+
+运费价格: 单件运费与多件  freightOnly|freightMany
+是否合并  freightMerger
+
+//海关关税     jwgCustoms 
+
+
+###设置限购
+限购设置：   jwgLimitation 
+
+###上架及退货设置
+上架时间:  立即 定时 就发布 jwgTime      起始|下架  timeBegin|timeEnd 
+上架设置： 自动             jwgDoTime 
+//首页排序：                jwgSort
+退货条件： 可退货           jwgGoReturn 

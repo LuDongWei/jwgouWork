@@ -1,0 +1,49 @@
+{
+	"jwgName": "我是商品名称",
+	"jwgProperties": { //商品属性
+		"proFixed": [ //固定的属性
+			{
+				"id": "1",
+				"choose": [31, 31, 31] //多选
+			}, {
+				"id": "2",
+				"choose": [22] //单选
+			}
+		],
+		"proCustom": [ //自定义属性
+			{
+				"key": "款式",
+				"value": "春装"
+			}, {
+				"key": "布料",
+				"value": "纯棉"
+			}
+		]
+	},
+	"jwgImages": [
+		"http://img.jpg",
+		"http://img.jpg",
+		"http://img.jpg"
+	],
+	"jwgStatus": 0, //备货状态  0|1   现货|代购
+	"jwgTransport": 0, //配送方式  0|1|2  护航直邮|海外直邮|国内现货
+	"jwgFreight": { //运费价格
+		"freightStatus": 0, //运费类型   0|1   卖家承担运费|买家承担运费
+		"freightOnly": "12", //单件价格
+		"freightMany": "5", //多件价格
+		"freightMerger": true //是否合并
+	},
+	"jwgLimitation": { //商品限购
+		"isLimitation": true, //是否开启
+		"LimitationAmount": 12 //限购件数
+	},
+	"jwgTime": { //上架时间
+		"timeStatus": 0, //状态  0|1|2   立即|定时|不上架
+		"timing": { //定时时间
+			"begin": "2014-10-09 19:45",
+			"end": "2014-11-07 19:45"
+		}
+	},
+	"jwgDoTime": true, //上架设置 是否自动上架
+	"jwgGoReturn": 0 //退货条件   0|1    有条件退货|可以退货
+}

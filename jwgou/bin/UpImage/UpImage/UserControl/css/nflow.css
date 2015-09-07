@@ -1,0 +1,6 @@
+@charset "utf-8";
+/*弹出层*/
+.ns_flow { background-image: url(../images/flow_window_bg.png); overflow: hidden; position: absolute; left: 0px; top: 0px; display: none; z-index: 1000000; }
+.ns_flow .ns_flow_window { border: 5px solid #e4e4ec; background-color: #fff; }
+.ns_flow_mlAuto{ margin-left:auto; margin-right:auto; }
+

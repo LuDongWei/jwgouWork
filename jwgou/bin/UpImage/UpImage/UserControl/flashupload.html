@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>FlashUpload</title>
+<style type="text/css">
+body { margin: 0px; padding: 0px; font-family:"微软雅黑", "宋体"; font-size:12px; }
+.main { margin-left: auto; margin-right: auto; width: 540px; }
+.close{ width:20px; height:20px; overflow:hidden; float:right; color:#333; cursor:pointer; text-align:center; line-height:20px; }
+</style>
+<script type="text/javascript">
+	//获取参数
+	var parameter = window.location.href.split('?')[1];
+	//有一个上传成功
+	//itemId,索引号
+	//physicsFileName 物理文件名
+	//fileName, 文件逻辑名称
+	//haveMaxImg有无大图
+	//path图片路径
+	function uploadItemOk(itemId,physicsFileName,fileName,haveMaxImg,path)
+	{
+		
+	}
+	//所有的都上传成功了
+	//imgArr 包含图片信息的字符串
+	function uploadAllOk(imgArr)
+	{
+		window.parent.uploadComplete(imgArr);
+		window.parent.closeNsFlow();
+	}
+</script>
+</head>
+<body>
+<div class="main">
+<div class="close" onclick="window.parent.closeNsFlow();" title="点击关闭">X</div>
+<script type="text/javascript">
+	document.write('<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,28,0" width="520" height="500"><param name="movie" value="upload.swf?'+parameter+'" /><param name="quality" value="high" /><param name="wmode" value="opaque" /><embed src="upload.swf?'+parameter+'" quality="high" wmode="opaque" pluginspage="http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="520" height="480"></embed></object>');
+</script>
+</div>
+</body>
+</html>
